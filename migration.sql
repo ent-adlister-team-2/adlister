@@ -1,22 +1,25 @@
-USE adlister_db;
+USE tasklister_db;
 
 DROP TABLE IF EXISTS tasks;
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS households;
 
-CREATE TABLE users (
+CREATE TABLE households (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    username VARCHAR(240) NOT NULL,
-    email VARCHAR(240) NOT NULL,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
+    name VARCHAR(150),
     PRIMARY KEY (id)
 );
 
 CREATE TABLE tasks (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    user_id INT UNSIGNED NOT NULL,
-    title VARCHAR(240) NOT NULL,
-    description TEXT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    description TEXT,
+    status boolean,
+    repeatable boolean,
+    category VARCHAR(100),
+    household_id INT UNSIGNED NOT NULL,
     PRIMARY KEY (id),
-    FOREIGN KEY (user_id) REFERENCES users(id)
-        ON DELETE CASCADE
+    FOREIGN KEY (household_id) REFERENCES households(id)
 );
