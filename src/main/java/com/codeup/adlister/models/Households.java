@@ -5,6 +5,7 @@ public class Households {
     private String username;
     private String email;
     private String password;
+    private String name;
 
     public Households() {}
 
@@ -19,6 +20,21 @@ public class Households {
         this.username = username;
         this.email = email;
         this.password = password;
+    }
+    public Households(long id, String username, String email, String password, String name) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public long getId() {
