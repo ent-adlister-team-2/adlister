@@ -1,9 +1,8 @@
 package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
-import com.codeup.adlister.models.User;
+import com.codeup.adlister.models.Households;
 import com.codeup.adlister.util.Password;
-import org.mindrot.jbcrypt.BCrypt;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -36,15 +35,15 @@ public class RegisterServlet extends HttpServlet {
         }
 
         // create and save a new user
-        User user = new User(username, email, password);
+        Households households = new Households(username, email, password);
 
         // hash the password
 
-        String hash = Password.hash(user.getPassword());
+        String hash = Password.hash(households.getPassword());
 
-        user.setPassword(hash);
+        households.setPassword(hash);
 
-        DaoFactory.getUsersDao().insert(user);
+        DaoFactory.getUsersDao().insert(households);
         response.sendRedirect("/login");
     }
 }

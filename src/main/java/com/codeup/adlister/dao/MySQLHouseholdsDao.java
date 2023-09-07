@@ -1,14 +1,14 @@
 package com.codeup.adlister.dao;
 
-import com.codeup.adlister.models.User;
+import com.codeup.adlister.models.Households;
 import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
 
-public class MySQLUsersDao implements Users {
+public class MySQLHouseholdsDao implements com.codeup.adlister.dao.Households {
     private Connection connection;
 
-    public MySQLUsersDao(Config config) {
+    public MySQLHouseholdsDao(Config config) {
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
@@ -23,7 +23,7 @@ public class MySQLUsersDao implements Users {
 
 
     @Override
-    public User findByUsername(String username) {
+    public com.codeup.adlister.models.Households findByUsername(String username) {
         String query = "SELECT * FROM users WHERE username = ? LIMIT 1";
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
@@ -35,13 +35,13 @@ public class MySQLUsersDao implements Users {
     }
 
     @Override
-    public Long insert(User user) {
+    public Long insert(Households households) {
         String query = "INSERT INTO users(username, email, password) VALUES (?, ?, ?)";
         try {
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
-            stmt.setString(1, user.getUsername());
-            stmt.setString(2, user.getEmail());
-            stmt.setString(3, user.getPassword());
+            stmt.setString(1, households.getUsername());
+            stmt.setString(2, households.getEmail());
+            stmt.setString(3, households.getPassword());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -51,11 +51,11 @@ public class MySQLUsersDao implements Users {
         }
     }
 
-    private User extractUser(ResultSet rs) throws SQLException {
+    private Households extractUser(ResultSet rs) throws SQLException {
         if (! rs.next()) {
             return null;
         }
-        return new User(
+        return new Households(
             rs.getLong("id"),
             rs.getString("username"),
             rs.getString("email"),

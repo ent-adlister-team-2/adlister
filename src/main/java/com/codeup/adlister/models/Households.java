@@ -1,20 +1,20 @@
 package com.codeup.adlister.models;
 
-public class User {
+public class Households {
     private long id;
     private String username;
     private String email;
     private String password;
 
-    public User() {}
+    public Households() {}
 
-    public User(String username, String email, String password) {
+    public Households(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
     }
 
-    public User(long id, String username, String email, String password) {
+    public Households(long id, String username, String email, String password) {
         this.id = id;
         this.username = username;
         this.email = email;

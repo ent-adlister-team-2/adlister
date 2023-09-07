@@ -1,21 +1,21 @@
 package com.codeup.adlister.dao;
 
 public class DaoFactory {
-    private static Ads adsDao;
-    private static Users usersDao;
+    private static Tasks adsDao;
+    private static Households householdsDao;
     private static Config config = new Config();
 
-    public static Ads getAdsDao() {
+    public static Tasks getAdsDao() {
         if (adsDao == null) {
-            adsDao = new MySQLAdsDao(config);
+            adsDao = new MySQLTasksDao(config);
         }
         return adsDao;
     }
 
-    public static Users getUsersDao() {
-        if (usersDao == null) {
-            usersDao = new MySQLUsersDao(config);
+    public static Households getUsersDao() {
+        if (householdsDao == null) {
+            householdsDao = new MySQLHouseholdsDao(config);
         }
-        return usersDao;
+        return householdsDao;
     }
 }

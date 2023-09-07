@@ -1,6 +1,6 @@
 USE adlister_db;
 
-DROP TABLE IF EXISTS ads;
+DROP TABLE IF EXISTS tasks;
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
@@ -11,7 +11,7 @@ CREATE TABLE users (
     PRIMARY KEY (id)
 );
 
-CREATE TABLE ads (
+CREATE TABLE tasks (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     user_id INT UNSIGNED NOT NULL,
     title VARCHAR(240) NOT NULL,
