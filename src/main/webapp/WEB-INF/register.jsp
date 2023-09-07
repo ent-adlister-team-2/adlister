@@ -2,7 +2,7 @@
 <html>
 <head>
     <jsp:include page="partials/head.jsp">
-        <jsp:param name="title" value="Register For Our Site!" />
+        <jsp:param name="title" value="Register For Tasklister!" />
     </jsp:include>
 </head>
 <body>
@@ -11,22 +11,29 @@
         <h1>Please fill in your information.</h1>
         <form action="/register" method="post">
             <div class="form-group">
-                <label for="username">Username</label>
+                <label for="username">Enter a Username</label>
                 <input id="username" name="username" class="form-control" type="text">
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
+                <label for="email">Enter Your Email</label>
                 <input id="email" name="email" class="form-control" type="text">
             </div>
             <div class="form-group">
-                <label for="password">Password</label>
+                <label for="password">Enter in a Password</label>
                 <input id="password" name="password" class="form-control" type="password">
             </div>
             <div class="form-group">
                 <label for="confirm_password">Confirm Password</label>
                 <input id="confirm_password" name="confirm_password" class="form-control" type="password">
             </div>
-            <input type="submit" class="btn btn-primary btn-block">
+            <div class="form-group">
+                <label for="housename">Enter in a Household Name</label>
+                <input id="housename" name="housename" class="form-control" type="text">
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <button type="submit">Register!</button>
+            </div>
+
         </form>
     </div>
 </body>
