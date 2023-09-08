@@ -1,5 +1,7 @@
 package com.codeup.adlister.controllers;
 
+import com.codeup.adlister.models.Household;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +16,8 @@ public class ViewProfileServlet extends HttpServlet {
             response.sendRedirect("/login");
             return;
         }
+        Household household = (Household) request.getSession().getAttribute("user");
+        request.setAttribute("household", household);
         request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
     }
 }
