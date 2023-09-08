@@ -86,4 +86,21 @@ public class Task {
     public void setHouseholdId(int householdId) {
         this.householdId = householdId;
     }
+
+    public Boolean getRepeatable() {
+        return repeatable;
+    }
+    public void setRepeatable(Boolean repeatable) {
+        this.repeatable = repeatable;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
+
+
 }
