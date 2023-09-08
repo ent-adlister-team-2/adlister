@@ -25,7 +25,7 @@ public class CreateTaskServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        Household loggedInHousehold = (Household) request.getSession().getAttribute("user");
+        Household loggedInHousehold = (Household) request.getSession().getAttribute("household");
         boolean repeatableTask = request.getParameter("repeatable") != null;
         Task task = new Task(
                 request.getParameter("name"),
