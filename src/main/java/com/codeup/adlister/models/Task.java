@@ -1,21 +1,23 @@
 package com.codeup.adlister.models;
 
 public class Task {
-    private long id;
-    private long userId;
-    private String title;
+    private int id;
+    private String name;
     private String description;
+    private int householdId;
 
-    public Task(long id, long userId, String title, String description) {
+    public Task() {}
+
+    public Task(int id, String name, String description, int householdId) {
         this.id = id;
-        this.userId = userId;
-        this.title = title;
+        this.name = name;
         this.description = description;
+        this.householdId = householdId;
     }
 
-    public Task(long userId, String title, String description) {
-        this.userId = userId;
-        this.title = title;
+    public Task(int id, String name, String description) {
+        this.id = id;
+        this.name = name;
         this.description = description;
     }
 
@@ -23,24 +25,16 @@ public class Task {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public long getUserId() {
-        return userId;
+    public String getName() {
+        return name;
     }
 
-    public void setUserId(long userId) {
-        this.userId = userId;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -49,5 +43,13 @@ public class Task {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getHouseholdId() {
+        return householdId;
+    }
+
+    public void setHouseholdId(int householdId) {
+        this.householdId = householdId;
     }
 }

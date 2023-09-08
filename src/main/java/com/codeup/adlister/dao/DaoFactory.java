@@ -3,15 +3,15 @@ package com.codeup.adlister.dao;
 import com.codeup.adlister.util.Config;
 
 public class DaoFactory {
-    private static Tasks adsDao;
+    private static Tasks tasksDao;
     private static Households householdsDao;
     private static Config config = new Config();
 
     public static Tasks getAdsDao() {
-        if (adsDao == null) {
-            adsDao = new MySQLTasksDao(config);
+        if (tasksDao == null) {
+            tasksDao = new MySQLTasksDao(config);
         }
-        return adsDao;
+        return tasksDao;
     }
 
     public static Households getUsersDao() {
