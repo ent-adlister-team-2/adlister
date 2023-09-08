@@ -29,6 +29,7 @@ public class MySQLTasksDao implements Tasks {
         PreparedStatement stmt = null;
         try {
             stmt = connection.prepareStatement("SELECT * FROM tasklister_db.tasks WHERE household_id=?");
+            stmt.setLong(1, houseId);
             ResultSet rs = stmt.executeQuery();
             return createTasksFromResults(rs);
         } catch (SQLException e) {
