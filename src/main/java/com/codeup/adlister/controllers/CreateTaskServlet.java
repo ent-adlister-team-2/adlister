@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/ads/create")
+@WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/tasks/create")
 public class CreateTaskServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if(request.getSession().getAttribute("user") == null) {
+        if (request.getSession().getAttribute("user") == null) {
             response.sendRedirect("/login");
             // add a return statement to exit out of the entire method.
             return;
@@ -26,10 +26,12 @@ public class CreateTaskServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Household loggedInHousehold = (Household) request.getSession().getAttribute("user");
+        boolean repeatableTask = request.getParameter("repeatable") != null;
         Task task = new Task(
-            loggedInHousehold.getId(),
-            request.getParameter("title"),
-            request.getParameter("description")
+                request.getParameter("name"),
+                request.getParameter("description"),
+                repeatableTask,
+                loggedInHousehold.getId()
         );
         DaoFactory.getTasksDao().insert(task);
         response.sendRedirect("/tasks");

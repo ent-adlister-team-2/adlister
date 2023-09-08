@@ -17,6 +17,12 @@
                 <label for="description">Description</label>
                 <textarea id="description" name="description" class="form-control" type="text"></textarea>
             </div>
+
+            <label>
+                <input type="checkbox" id="repeatable" name="repeatable" value="repeatable"
+                        checked="checked"/>
+                Is this task repeatable?
+            </label>
             <input type="submit" class="btn btn-block btn-primary">
         </form>
     </div>
