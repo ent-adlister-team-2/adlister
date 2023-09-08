@@ -18,4 +18,10 @@ public class TasksIndexServlet extends HttpServlet {
         request.setAttribute("tasks", DaoFactory.getTasksDao().all(houseId));
         request.getRequestDispatcher("/WEB-INF/tasks/homepage.jsp").forward(request, response);
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Household household = (Household)req.getSession().getAttribute("household");
+        resp.sendRedirect("/tasks/create");
+    }
 }

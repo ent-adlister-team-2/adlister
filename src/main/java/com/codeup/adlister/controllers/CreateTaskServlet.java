@@ -14,7 +14,7 @@ import java.io.IOException;
 @WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/tasks/create")
 public class CreateTaskServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (request.getSession().getAttribute("user") == null) {
+        if (request.getSession().getAttribute("household") == null) {
             response.sendRedirect("/login");
             // add a return statement to exit out of the entire method.
             return;
