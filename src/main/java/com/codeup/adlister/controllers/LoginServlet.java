@@ -1,7 +1,7 @@
 package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
-import com.codeup.adlister.models.Households;
+import com.codeup.adlister.models.Household;
 import com.codeup.adlister.util.Password;
 
 import javax.servlet.ServletException;
@@ -24,17 +24,17 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        Households households = DaoFactory.getUsersDao().findByUsername(username);
+        Household household = DaoFactory.getUsersDao().findByUsername(username);
 
-        if (households == null) {
+        if (household == null) {
             response.sendRedirect("/login");
             return;
         }
 
-        boolean validAttempt = Password.check(password, households.getPassword());
+        boolean validAttempt = Password.check(password, household.getPassword());
 
         if (validAttempt) {
-            request.getSession().setAttribute("user", households);
+            request.getSession().setAttribute("user", household);
             response.sendRedirect("/profile");
         } else {
             response.sendRedirect("/login");

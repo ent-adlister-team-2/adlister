@@ -1,21 +1,21 @@
 package com.codeup.adlister.models;
 
 public class Task {
-    private int id;
+    private long id;
     private String name;
     private String description;
-    private int householdId;
+    private long householdId;
 
     public Task() {}
 
-    public Task(int id, String name, String description, int householdId) {
+    public Task(long id, String name, String description, long householdId) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.householdId = householdId;
     }
 
-    public Task(int id, String name, String description) {
+    public Task(long id, String name, String description) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -25,7 +25,7 @@ public class Task {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -45,7 +45,7 @@ public class Task {
         this.description = description;
     }
 
-    public int getHouseholdId() {
+    public long getHouseholdId() {
         return householdId;
     }
 

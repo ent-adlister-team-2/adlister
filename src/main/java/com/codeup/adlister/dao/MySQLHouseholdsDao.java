@@ -1,7 +1,7 @@
 package com.codeup.adlister.dao;
 
+import com.codeup.adlister.models.Household;
 import com.codeup.adlister.util.Config;
-import com.codeup.adlister.models.Households;
 import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
@@ -24,7 +24,7 @@ public class MySQLHouseholdsDao implements com.codeup.adlister.dao.Households {
 
 
     @Override
-    public com.codeup.adlister.models.Households findByUsername(String username) {
+    public Household findByUsername(String username) {
         String query = "SELECT * FROM tasklister_db.households WHERE username = ? LIMIT 1";
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
@@ -36,13 +36,13 @@ public class MySQLHouseholdsDao implements com.codeup.adlister.dao.Households {
     }
 
     @Override
-    public Long insert(Households households) {
+    public Long insert(Household household) {
         String query = "INSERT INTO tasklister_db.households(username, email, password) VALUES (?, ?, ?)";
         try {
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
-            stmt.setString(1, households.getUsername());
-            stmt.setString(2, households.getEmail());
-            stmt.setString(3, households.getPassword());
+            stmt.setString(1, household.getUsername());
+            stmt.setString(2, household.getEmail());
+            stmt.setString(3, household.getPassword());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -52,11 +52,11 @@ public class MySQLHouseholdsDao implements com.codeup.adlister.dao.Households {
         }
     }
 
-    private Households extractUser(ResultSet rs) throws SQLException {
+    private Household extractUser(ResultSet rs) throws SQLException {
         if (! rs.next()) {
             return null;
         }
-        return new Households(
+        return new Household(
             rs.getInt("id"),
             rs.getString("username"),
             rs.getString("email"),
