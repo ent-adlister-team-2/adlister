@@ -3,8 +3,7 @@ USE tasklister_db;
 DROP TABLE IF EXISTS tasks;
 DROP TABLE IF EXISTS households;
 
-CREATE TABLE households
-(
+CREATE TABLE households(
     id       INT UNSIGNED AUTO_INCREMENT NOT NULL,
     username VARCHAR(50)                 NOT NULL UNIQUE,
     email    VARCHAR(100)                NOT NULL UNIQUE,
@@ -13,8 +12,7 @@ CREATE TABLE households
     PRIMARY KEY (id)
 );
 
-CREATE TABLE tasks
-(
+CREATE TABLE tasks(
     id          INT UNSIGNED NOT NULL AUTO_INCREMENT,
     name        VARCHAR(100) NOT NULL,
     description TEXT,
