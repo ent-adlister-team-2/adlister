@@ -44,7 +44,7 @@ public class MySQLTasksDao implements Tasks {
             stmt.setLong(1, task.getId());
             stmt.setString(2, task.getName());
             stmt.setString(3, task.getDescription());
-            stmt.setInt(4, task.getHouseholdId());
+            stmt.setLong(4, task.getHouseholdId());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();

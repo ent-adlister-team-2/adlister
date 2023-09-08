@@ -1,7 +1,7 @@
 package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
-import com.codeup.adlister.models.Households;
+import com.codeup.adlister.models.Household;
 import com.codeup.adlister.models.Task;
 
 import javax.servlet.ServletException;
@@ -25,9 +25,9 @@ public class CreateTaskServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        Households loggedInHouseholds = (Households) request.getSession().getAttribute("user");
+        Household loggedInHousehold = (Household) request.getSession().getAttribute("user");
         Task task = new Task(
-            loggedInHouseholds.getId(),
+            loggedInHousehold.getId(),
             request.getParameter("title"),
             request.getParameter("description")
         );

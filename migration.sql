@@ -1,7 +1,8 @@
 USE tasklister_db;
 
 DROP TABLE IF EXISTS tasks;
-DROP TABLE IF EXISTS households;
+DROP TABLE IF EXISTS household;
+
 
 CREATE TABLE households (
     id LONG NOT NULL AUTO_INCREMENT,
@@ -21,5 +22,5 @@ CREATE TABLE tasks (
     category VARCHAR(100),
     household_id LONG NOT NULL,
     PRIMARY KEY (id),
-    FOREIGN KEY (household_id) REFERENCES households(id)
+    FOREIGN KEY (household_id) REFERENCES household(id)
 );
