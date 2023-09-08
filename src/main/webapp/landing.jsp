@@ -9,6 +9,24 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 
+<main class="container">
+    <div class="row">
+        <div class="column">
 
+        </div>
+        <div class="column">
+
+        </div>
+    </div>
+    <div class="row">
+        <h1>
+            <ul class="navbar ul">
+                <li class="navbar li">Ty </li>
+                <li class="navbar li">Audrey</li>
+                <li class="navbar li">Kurt</li>
+            </ul>
+        </h1>
+    </div>
+</main>
 </body>
 </html>
