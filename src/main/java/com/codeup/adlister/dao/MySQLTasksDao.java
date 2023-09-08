@@ -15,9 +15,9 @@ public class MySQLTasksDao implements Tasks {
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
-                config.getUrl(),
-                config.getUser(),
-                config.getPassword()
+                    config.getUrl(),
+                    config.getUser(),
+                    config.getPassword()
             );
         } catch (SQLException e) {
             throw new RuntimeException("Error connecting to the database!", e);
@@ -25,10 +25,10 @@ public class MySQLTasksDao implements Tasks {
     }
 
     @Override
-    public List<Task> all() {
+    public List<Task> all(Long houseId) {
         PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM tasklister_db.tasks");
+            stmt = connection.prepareStatement("SELECT * FROM tasklister_db.tasks WHERE household_id=?");
             ResultSet rs = stmt.executeQuery();
             return createTasksFromResults(rs);
         } catch (SQLException e) {
@@ -54,12 +54,22 @@ public class MySQLTasksDao implements Tasks {
         }
     }
 
+    @Override
+    public void viewTask(Task task) throws SQLException {
+        String viewSingleTask = "SELECT * FROM tasklister_db.tasks WHERE id= ?";
+        PreparedStatement statement = connection.prepareStatement(viewSingleTask);
+        ResultSet rs = statement.executeQuery();
+        extractAd(rs);
+    }
+
     private Task extractAd(ResultSet rs) throws SQLException {
         return new Task(
-            rs.getInt("id"),
-            rs.getString("name"),
-            rs.getString("description"),
-            rs.getInt("household_id")
+                rs.getLong("id"),
+                rs.getString("name"),
+                rs.getString("description"),
+                rs.getBoolean("status"),
+                rs.getBoolean("repeatable"),
+                rs.getLong("household_id")
         );
     }
 

@@ -4,6 +4,8 @@ public class Task {
     private long id;
     private String name;
     private String description;
+    private Boolean repeatable;
+    private Boolean status;
     private long householdId;
 
     public Task() {}
@@ -19,6 +21,38 @@ public class Task {
         this.id = id;
         this.name = name;
         this.description = description;
+    }
+
+    public Task(int id, String name, String description, boolean repeatable, int householdId) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.repeatable = repeatable;
+        this.householdId = householdId;
+    }
+
+    public Task(String name, String description, Boolean repeatable, Boolean status, long householdId) {
+        this.name = name;
+        this.description = description;
+        this.repeatable = repeatable;
+        this.status = status;
+        this.householdId = householdId;
+    }
+
+    public Task(long id, String name, String description, Boolean repeatable, Boolean status, long householdId) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.repeatable = repeatable;
+        this.status = status;
+        this.householdId = householdId;
+    }
+
+    public Task(String name, String description, Boolean status, long householdId) {
+        this.name = name;
+        this.description = description;
+        this.status = status;
+        this.householdId = householdId;
     }
 
     public long getId() {
