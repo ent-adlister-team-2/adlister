@@ -8,10 +8,10 @@
 <body>
     <div class="container">
         <h1>Create a new Ad</h1>
-        <form action="/tasks/create" method="post">
+        <form action="${pageContext.request.contextPath}/tasks/create" method="post">
             <div class="form-group">
-                <label for="title">Title</label>
-                <input id="title" name="title" class="form-control" type="text">
+                <label for="name">Title</label>
+                <input id="name" name="name" class="form-control" type="text">
             </div>
             <div class="form-group">
                 <label for="description">Description</label>
