@@ -20,7 +20,7 @@ public class ViewTaskServlet extends HttpServlet {
         }
 
         req.getRequestDispatcher("/WEB-INF/view-task.jsp").forward(req, resp);
-        req.setAttribute("task", DaoFactory.getAdsDao().);
+        req.setAttribute("task", DaoFactory.getTasksDao().);
     }
 
 }
