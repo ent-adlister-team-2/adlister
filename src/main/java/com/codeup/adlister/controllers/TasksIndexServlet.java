@@ -16,7 +16,7 @@ public class TasksIndexServlet extends HttpServlet {
         Household household = (Household) request.getSession().getAttribute("user");
         Long houseId = household.getId();
         request.setAttribute("tasks", DaoFactory.getTasksDao().all(houseId));
-        request.getRequestDispatcher("/homepage.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/tasks/homepage.jsp").forward(request, response);
 
     }
 }

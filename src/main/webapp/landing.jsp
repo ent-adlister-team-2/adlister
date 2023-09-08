@@ -8,7 +8,6 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-
 <main class="container">
     <div class="row">
         <div class="column">
