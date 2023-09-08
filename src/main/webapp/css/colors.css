@@ -1,13 +1,13 @@
 
 :root {
     /* Primary Colors */
-    --primary-color: #3498db;
+    --primary-color: #050000;
     --primary-dark: #2980b9;
-    --primary-light: #5ac8fa;
+    --primary-light: #000000;
 
     /* Secondary Colors */
     --secondary-color: #e74c3c;
-    --secondary-dark: #c0392b;
+    --secondary-dark: #070000;
     --secondary-light: #fd7e68;
 
     /* Neutral Colors */
@@ -27,7 +27,7 @@
 /* styles.css */
 
 .button {
-    background-color: var(--primary-color);
+    background-color: var(--success);
     color: var(--white);
 }
 
@@ -41,5 +41,5 @@
     color: var(--dark-gray);
 }
 .background {
-    background-color: var(--light-gray);
+    background-color: #bbfabb;
 }

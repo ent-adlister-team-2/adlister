@@ -4,12 +4,17 @@ This css folder is only for navbar styling
 
 /* Apply background color and styles to the navbar */
 .navbar {
-    background-color: var(--primary-color);
+    background-color: black;
     padding: 10px 0;
+    color: #ffffff;
 }
 
 .nav-title{
     font-size: 1.6rem;
+    color: white;
+}
+.title{
+    text-decoration-color: white;
     color: white;
 }
 /* Style the navigation list */
@@ -35,9 +40,9 @@ This css folder is only for navbar styling
 }
 
 /* Change link color on hover */
-.nav-list li a:hover {
-    color: var(--primary-light);
-}
+/*.nav-list li a:hover {*/
+/*    color: var(--primary-light);*/
+/*}*/
 
 .navbar ul {
     list-style: none;
@@ -61,10 +66,19 @@ This css folder is only for navbar styling
     border-radius: 10%;
 }
 
-/*.navbar li-left{*/
-/*    margin: 0 10px;*/
-/*    background-color: white;*/
-/*    border: 2px solid black;*/
-/*    border-radius: 10%;*/
-/*    !*justify-content: left;*!*/
-/*}*/
+
+.navbar li a:hover {
+    background: #03f40f;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03f40f,
+    0 0 25px #03f40f,
+    0 0 50px #03f40f,
+    0 0 100px #03f40f;
+}
+.submit-btn{
+    opacity: 1%;
+}
+.submit-text{
+    font-size: 10px;
+}
