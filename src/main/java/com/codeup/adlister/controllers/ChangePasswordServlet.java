@@ -1,7 +1,6 @@
 package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
-import com.codeup.adlister.dao.MySQLHouseholdsDao;
 import com.codeup.adlister.models.Household;
 import com.codeup.adlister.util.Password;
 import org.mindrot.jbcrypt.BCrypt;
@@ -23,7 +22,7 @@ public class ChangePasswordServlet extends HttpServlet {
         }
         Household household = (Household) request.getSession().getAttribute("household");
         request.setAttribute("household", household);
-        request.getRequestDispatcher("/WEB-INF/change-password.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/households/change-password.jsp").forward(request, response);
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -35,7 +34,7 @@ public class ChangePasswordServlet extends HttpServlet {
         String hashedNewPassword = BCrypt.hashpw(newPassword, BCrypt.gensalt());
 
         Household household = DaoFactory.getUsersDao().findByUsername(username);
-        boolean validAttempt = Password.check(oldPassword, household.getPassword());
+        boolean validAttempt = Password.check(oldPassword, loggedInHousehold.getPassword());
 
         if(validAttempt) {
             household.setPassword(hashedNewPassword);
@@ -45,7 +44,7 @@ public class ChangePasswordServlet extends HttpServlet {
                 throw new RuntimeException("Unable to update password", e);
             }
         }
-        else response.sendRedirect("/create-password");
+        else response.sendRedirect("/change-password");
 
     }
 }
