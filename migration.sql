@@ -22,5 +22,5 @@ CREATE TABLE tasks (
     category VARCHAR(100),
     household_id LONG NOT NULL,
     PRIMARY KEY (id),
-    FOREIGN KEY (household_id) REFERENCES household(id)
+    FOREIGN KEY (household_id) REFERENCES households(id)
 );
