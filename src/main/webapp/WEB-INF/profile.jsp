@@ -21,10 +21,9 @@
         </div>
         <div>
             <h2>Password:</h2>
-            <form action="/change-password" method="post">
-                <input type="hidden">
-                <button type="submit">Change Password</button>
-            </form>
+            <a href="/change-password">
+                <button>Change Password</button>
+            </a>
         </div>
     </div>
 
