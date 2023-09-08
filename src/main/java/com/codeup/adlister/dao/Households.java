@@ -1,6 +1,8 @@
 package com.codeup.adlister.dao;
 
+import com.codeup.adlister.models.Household;
+
 public interface Households {
-    com.codeup.adlister.models.Households findByUsername(String username);
-    Long insert(com.codeup.adlister.models.Households households);
+    Household findByUsername(String username);
+    Long insert(Household household);
 }
