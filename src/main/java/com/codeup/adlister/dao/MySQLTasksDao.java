@@ -28,9 +28,9 @@ public class MySQLTasksDao implements Tasks {
     public List<Task> all() {
         PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM ads");
+            stmt = connection.prepareStatement("SELECT * FROM tasklister_db.tasks");
             ResultSet rs = stmt.executeQuery();
-            return createAdsFromResults(rs);
+            return createTasksFromResults(rs);
         } catch (SQLException e) {
             throw new RuntimeException("Error retrieving all ads.", e);
         }
@@ -39,11 +39,12 @@ public class MySQLTasksDao implements Tasks {
     @Override
     public Long insert(Task task) {
         try {
-            String insertQuery = "INSERT INTO ads(user_id, title, description) VALUES (?, ?, ?)";
+            String insertQuery = "INSERT INTO tasklister_db.tasks(id, name, description, household_id) VALUES (?, ?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
-            stmt.setLong(1, task.getUserId());
-            stmt.setString(2, task.getTitle());
+            stmt.setLong(1, task.getId());
+            stmt.setString(2, task.getName());
             stmt.setString(3, task.getDescription());
+            stmt.setInt(4, task.getHouseholdId());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -55,14 +56,14 @@ public class MySQLTasksDao implements Tasks {
 
     private Task extractAd(ResultSet rs) throws SQLException {
         return new Task(
-            rs.getLong("id"),
-            rs.getLong("user_id"),
-            rs.getString("title"),
-            rs.getString("description")
+            rs.getInt("id"),
+            rs.getString("name"),
+            rs.getString("description"),
+            rs.getInt("household_id")
         );
     }
 
-    private List<Task> createAdsFromResults(ResultSet rs) throws SQLException {
+    private List<Task> createTasksFromResults(ResultSet rs) throws SQLException {
         List<Task> tasks = new ArrayList<>();
         while (rs.next()) {
             tasks.add(extractAd(rs));
