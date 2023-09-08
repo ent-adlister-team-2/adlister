@@ -28,11 +28,10 @@
                 <label for="confirm_password"></label>
                 <input id="confirm_password" name="confirm_password" class="form-control" type="password" placeholder=" Confirm Password">
             </div>
-            <center>
-                <a href="#">
-                    <input type="submit">
-                    <span></span>
-                </a></center>
+            <a href="">
+                <input class="submit-btn" type="submit">
+                <span class="submit-text">Submit</span>
+            </a>
         </form>
     </div>
 </body>

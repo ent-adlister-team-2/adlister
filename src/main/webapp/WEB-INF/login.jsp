@@ -22,9 +22,9 @@
                 <input id="password" name="password" class="form-control" type="password" placeholder="Password">
             </div>
             <center>
-                <a href="#">
-                    <input type="submit">
-                    <span></span>
+                <a href="">
+                    <input class="submit-btn" type="submit">
+                    <span class="submit-text">Submit</span>
                 </a></center>
         </form>
     </div>

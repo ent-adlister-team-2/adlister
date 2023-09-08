@@ -6,7 +6,7 @@
         <jsp:param name="title" value=""/>
     </jsp:include>
 </head>
-<body>
+<body class="background">
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <main class="container background">
     <div class="row header justify-center">

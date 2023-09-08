@@ -10,7 +10,7 @@
 </head>
 <body class="background">
 <jsp:include page="partials/navbar.jsp" />
-<div class="container">
+<div class="container background">
     <h1>Task Details</h1>
     <div class="viewbox">
         <div class="taskTitle">
