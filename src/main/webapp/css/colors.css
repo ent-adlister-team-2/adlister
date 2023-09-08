@@ -1,0 +1,45 @@
+
+:root {
+    /* Primary Colors */
+    --primary-color: #3498db;
+    --primary-dark: #2980b9;
+    --primary-light: #5ac8fa;
+
+    /* Secondary Colors */
+    --secondary-color: #e74c3c;
+    --secondary-dark: #c0392b;
+    --secondary-light: #fd7e68;
+
+    /* Neutral Colors */
+    --white: #ffffff;
+    --black: #000000;
+    --gray: #808080;
+    --light-gray: #f0f0f0;
+    --dark-gray: #333333;
+
+    /* Additional Colors */
+    --success: #2ecc71;
+    --warning: #f39c12;
+    --info: #3498db;
+    --error: #e74c3c;
+}
+
+/* styles.css */
+
+.button {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.header {
+    background-color: var(--secondary-dark);
+    color: var(--white);
+}
+
+.footer {
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+}
+.background {
+    background-color: var(--light-gray);
+}

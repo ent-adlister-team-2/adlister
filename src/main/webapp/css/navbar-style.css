@@ -1,0 +1,36 @@
+/*
+This css folder is only for navbar styling
+*/
+
+/* Apply background color and styles to the navbar */
+.navbar {
+    background-color: var(--primary-color);
+    padding: 10px 0;
+}
+
+/* Style the navigation list */
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Style the list items */
+.nav-list li {
+    display: inline;
+    margin-right: 20px;
+}
+
+/* Style the navigation links */
+.nav-list li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Change link color on hover */
+.nav-list li a:hover {
+    color: var(--primary-light);
+}
