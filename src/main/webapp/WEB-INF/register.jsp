@@ -26,14 +26,9 @@
                 <label for="confirm_password">Confirm Password</label>
                 <input id="confirm_password" name="confirm_password" class="form-control" type="password">
             </div>
-            <div class="form-group">
-                <label for="housename">Enter in a Household Name</label>
-                <input id="housename" name="housename" class="form-control" type="text">
-            </div>
             <div style="display: flex; justify-content: center;">
                 <button type="submit">Register!</button>
             </div>
-
         </form>
     </div>
 </body>
