@@ -10,6 +10,7 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="container">
     <h1>Household Tasks</h1>
+    <a href="/"><button>Create Task</button></a>
     <div class="row">
        <c:forEach var="task" items="${tasks}">
            <div class="taskCard">
