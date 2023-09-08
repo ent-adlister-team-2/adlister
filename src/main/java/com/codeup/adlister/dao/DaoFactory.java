@@ -7,7 +7,7 @@ public class DaoFactory {
     private static Households householdsDao;
     private static Config config = new Config();
 
-    public static Tasks getAdsDao() {
+    public static Tasks getTasksDao() {
         if (tasksDao == null) {
             tasksDao = new MySQLTasksDao(config);
         }

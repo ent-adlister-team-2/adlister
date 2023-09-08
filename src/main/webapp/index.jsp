@@ -9,14 +9,10 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="container">
-    <h1>Welcome to the Tasklister!</h1>
+    <h1>Household Tasks</h1>
     <div class="row">
-        <div class="column">
-            sdkjh
-        </div>
-        <div class="column">
-            sadhjksdj
-        </div>
+       <c:forEach var="task" items="${tasks}">
+
 
     </div>
 </div>
