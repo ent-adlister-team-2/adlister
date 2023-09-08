@@ -13,6 +13,10 @@ This css folder is only for navbar styling
     font-size: 1.6rem;
     color: white;
 }
+.title{
+    text-decoration-color: white;
+    color: white;
+}
 /* Style the navigation list */
 .nav-list {
     list-style-type: none;

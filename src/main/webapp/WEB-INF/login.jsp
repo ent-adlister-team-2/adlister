@@ -8,10 +8,11 @@
 <body class="background">
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="container">
-    <div class="gap-5"><h1>Please Log In</h1></div>
 
     <div class="login-box">
-        <form action="/login" method="POST">>
+        <form action="/login" method="POST">
+            <h1 class="title">Please Log In</h1>
+
             <div class="user-box">
                 <label for="username"></label>
                 <input id="username" name="username" class="form-control" type="text" placeholder="Username">
@@ -27,5 +28,6 @@
                 </a></center>
         </form>
     </div>
+</div>
 </body>
 </html>

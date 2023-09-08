@@ -20,10 +20,10 @@
     <div class="row nav-list">
         <h4>
             Creators:
-            <ul class="navbar">
-                <li class="">Ty</li>
-                <li class="">Audrey</li>
-                <li class="">Kurt</li>
+            <ul class="">
+                <li class="background">Ty    </li>
+                <li class="background">Audrey</li>
+                <li class="background">Kurt  </li>
             </ul>
         </h4>
     </div>

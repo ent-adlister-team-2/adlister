@@ -9,28 +9,30 @@
 </head>
 <body class="background">
     <jsp:include page="partials/navbar.jsp" />
-    <div class="container">
-        <h1>Please fill in your information.</h1>
+    <div class="container login-box">
+        <h1 class="title">Please fill in your information.</h1>
         <form action="/register" method="post">
-            <div class="form-group">
-                <label for="username">Enter a Username</label>
-                <input id="username" name="username" class="form-control" type="text">
+            <div class="user-box">
+                <label for="username"></label>
+                <input id="username" name="username" class="form-control" type="text" placeholder="Enter a Username">
             </div>
-            <div class="form-group">
-                <label for="email">Enter Your Email</label>
-                <input id="email" name="email" class="form-control" type="text">
+            <div class="user-box">
+                <label for="email"></label>
+                <input id="email" name="email" class="form-control" type="text" placeholder="Enter Your Email">
             </div>
-            <div class="form-group">
-                <label for="password">Enter in a Password</label>
-                <input id="password" name="password" class="form-control" type="password">
+            <div class="user-box">
+                <label for="password"></label>
+                <input id="password" name="password" class="form-control" type="password" placeholder="Enter in a Password">
             </div>
-            <div class="form-group">
-                <label for="confirm_password">Confirm Password</label>
-                <input id="confirm_password" name="confirm_password" class="form-control" type="password">
+            <div class="user-box">
+                <label for="confirm_password"></label>
+                <input id="confirm_password" name="confirm_password" class="form-control" type="password" placeholder=" Confirm Password">
             </div>
-            <div style="display: flex; justify-content: center;">
-                <button type="submit">Register!</button>
-            </div>
+            <center>
+                <a href="#">
+                    <input type="submit">
+                    <span></span>
+                </a></center>
         </form>
     </div>
 </body>
