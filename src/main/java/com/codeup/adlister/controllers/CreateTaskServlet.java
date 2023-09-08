@@ -31,7 +31,7 @@ public class CreateTaskServlet extends HttpServlet {
             request.getParameter("title"),
             request.getParameter("description")
         );
-        DaoFactory.getAdsDao().insert(task);
+        DaoFactory.getTasksDao().insert(task);
         response.sendRedirect("/ads");
     }
 }

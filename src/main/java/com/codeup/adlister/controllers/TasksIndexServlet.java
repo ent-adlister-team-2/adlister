@@ -13,10 +13,10 @@ import java.io.IOException;
 @WebServlet(name = "controllers.AdsIndexServlet", urlPatterns = "/tasks")
 public class TasksIndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       Household household = (Household)request.getSession().getAttribute("user");
-       Long houseId = household.getId();
+        Household household = (Household) request.getSession().getAttribute("user");
+        Long houseId = household.getId();
         request.setAttribute("tasks", DaoFactory.getTasksDao().all(houseId));
-        request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/index.jsp").forward(request, response);
 
     }
 }

@@ -12,7 +12,13 @@
     <h1>Household Tasks</h1>
     <div class="row">
        <c:forEach var="task" items="${tasks}">
-
+           <div class="taskCard">
+               <h2> ${task.name} </h2>
+               <div> ${task.description} </div>
+               <div> Repeatable: ${task.repeatable} </div>
+               <div> Status: ${task.status} </div>
+           </div>
+       </c:forEach>
 
     </div>
 </div>
