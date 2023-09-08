@@ -52,6 +52,18 @@ public class MySQLHouseholdsDao implements com.codeup.adlister.dao.Households {
         }
     }
 
+    public Long update(long id, String password) throws SQLException {
+        try {
+            PreparedStatement stmt = connection.prepareStatement("UPDATE tasklister_db.households SET password = " + password + "WHERE id = " + id, Statement.RETURN_GENERATED_KEYS);
+            stmt.executeUpdate();
+            ResultSet rs = stmt.getGeneratedKeys();
+            rs.next();
+            return rs.getLong(1);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error resetting your password", e);
+        }
+    }
+
     private Household extractUser(ResultSet rs) throws SQLException {
         if (! rs.next()) {
             return null;

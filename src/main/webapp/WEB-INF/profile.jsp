@@ -9,8 +9,25 @@
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
     <div class="container">
-        <h1>Welcome, ${sessionScope.household.username}!</h1>
+        <h1>Welcome, ${household.username}!</h1>
+        <div>
+            <h2>Username: ${household.username}</h2>
+        </div>
+        <div>
+            <h2>Email: ${household.email}</h2>
+        </div>
+        <div>
+            <h2>Household Name: ${household.name}</h2>
+        </div>
+        <div>
+            <h2>Password:</h2>
+            <form action="/change-password" method="post">
+                <input type="hidden">
+                <button type="submit">Change Password</button>
+            </form>
+        </div>
     </div>
+
 
 </body>
 </html>
