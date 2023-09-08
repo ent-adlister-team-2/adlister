@@ -2,23 +2,29 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Please Log In" />
+        <jsp:param name="title" value="Please Log In"/>
     </jsp:include>
 </head>
-<body>
-    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-    <div class="container">
-        <h1>Please Log In</h1>
-        <form action="/login" method="POST">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input id="username" name="username" class="form-control" type="text">
+<body class="background">
+<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+<div class="container">
+    <div class="gap-5"><h1>Please Log In</h1></div>
+
+    <div class="login-box">
+        <form action="/login" method="POST">>
+            <div class="user-box">
+                <label for="username"></label>
+                <input id="username" name="username" class="form-control" type="text" placeholder="Username">
             </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input id="password" name="password" class="form-control" type="password">
+            <div class="user-box">
+                <label for="password"></label>
+                <input id="password" name="password" class="form-control" type="password" placeholder="Password">
             </div>
-            <input type="submit" class="btn btn-primary btn-block" value="Log In">
+            <center>
+                <a href="#">
+                    <input type="submit">
+                    <span></span>
+                </a></center>
         </form>
     </div>
 </body>

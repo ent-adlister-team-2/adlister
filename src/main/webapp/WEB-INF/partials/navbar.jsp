@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<div class="navbar">
+<div class="navbar padding-5">
     <a class="navbar nav-title" href="/tasks">Tasklister</a>
     <ul class="navbar ul">
         <c:choose>

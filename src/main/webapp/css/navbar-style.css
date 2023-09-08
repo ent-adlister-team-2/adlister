@@ -4,8 +4,9 @@ This css folder is only for navbar styling
 
 /* Apply background color and styles to the navbar */
 .navbar {
-    background-color: var(--primary-color);
+    background-color: black;
     padding: 10px 0;
+    color: #ffffff;
 }
 
 .nav-title{
