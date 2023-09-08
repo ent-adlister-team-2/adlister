@@ -20,7 +20,7 @@ public class CreateTaskServlet extends HttpServlet {
             return;
         }
 
-        request.getRequestDispatcher("/WEB-INF/ads/create.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/tasks/create.jsp").forward(request, response);
 
     }
 
@@ -32,6 +32,6 @@ public class CreateTaskServlet extends HttpServlet {
             request.getParameter("description")
         );
         DaoFactory.getTasksDao().insert(task);
-        response.sendRedirect("/ads");
+        response.sendRedirect("/tasks");
     }
 }
