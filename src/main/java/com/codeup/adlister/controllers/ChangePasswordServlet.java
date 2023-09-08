@@ -17,17 +17,17 @@ import java.sql.SQLException;
 @WebServlet ("/change-password")
 public class ChangePasswordServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        if (request.getSession().getAttribute("user") == null) {
+        if (request.getSession().getAttribute("household") == null) {
             response.sendRedirect("/login");
             return;
         }
-        Household household = (Household) request.getSession().getAttribute("user");
+        Household household = (Household) request.getSession().getAttribute("household");
         request.setAttribute("household", household);
         request.getRequestDispatcher("/WEB-INF/change-password.jsp").forward(request, response);
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        Household loggedInHousehold = (Household) request.getSession().getAttribute("user");
+        Household loggedInHousehold = (Household) request.getSession().getAttribute("household");
 
         String username = request.getParameter("username");
         String oldPassword = request.getParameter("old-password");
