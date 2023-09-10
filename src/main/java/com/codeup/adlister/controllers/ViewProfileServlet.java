@@ -1,5 +1,6 @@
 package com.codeup.adlister.controllers;
 
+import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.Household;
 
 import javax.servlet.ServletException;
@@ -16,8 +17,9 @@ public class ViewProfileServlet extends HttpServlet {
             response.sendRedirect("/login");
             return;
         }
-        Household household = (Household) request.getSession().getAttribute("household");
-        request.setAttribute("household", household);
+        Household sessionHousehold = (Household) request.getSession().getAttribute("household");
+        Household loggedInHousehold = DaoFactory.getHouseholdsDao().findByUsername(sessionHousehold.getUsername());
+        request.setAttribute("household", loggedInHousehold);
         request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
     }
 }
