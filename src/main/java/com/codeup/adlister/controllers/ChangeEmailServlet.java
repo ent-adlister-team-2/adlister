@@ -29,14 +29,16 @@ public class ChangeEmailServlet extends HttpServlet {
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        String confirmPassword = request.getParameter("confirm-password");
         String oldEmail = request.getParameter("old-email");
         String newEmail = request.getParameter("new-email");
 
         Boolean validUsername = loggedInHousehold.getUsername().equals(username);
-        Boolean validPassword = BCrypt.checkpw(loggedInHousehold.getPassword(), password);
+        Boolean validPassword = BCrypt.checkpw(password, loggedInHousehold.getPassword());
+        Boolean validConfirm = BCrypt.checkpw(confirmPassword, loggedInHousehold.getPassword());
         Boolean validEmail = loggedInHousehold.getEmail().equals(oldEmail);
 
-        if(validUsername && validPassword && validEmail) {
+        if(validUsername && validPassword && validConfirm && validEmail) {
             loggedInHousehold.setEmail(newEmail);
             try{
             DaoFactory.getHouseholdsDao().updateEmail(loggedInHousehold.getId(), loggedInHousehold.getEmail());
