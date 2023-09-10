@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -19,12 +20,14 @@ public class ChangeEmailServlet extends HttpServlet {
             response.sendRedirect("/login");
             return;
         }
+
+        request.getParameter("emailNotAvailable");
         Household household = (Household) request.getSession().getAttribute("household");
         request.setAttribute("household", household);
         request.getRequestDispatcher("/WEB-INF/households/change-email.jsp").forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         Household loggedInHousehold = (Household) request.getSession().getAttribute("household");
 
         String username = request.getParameter("username");
@@ -38,7 +41,9 @@ public class ChangeEmailServlet extends HttpServlet {
         Boolean validConfirm = BCrypt.checkpw(confirmPassword, loggedInHousehold.getPassword());
         Boolean validEmail = loggedInHousehold.getEmail().equals(oldEmail);
 
-        if(validUsername && validPassword && validConfirm && validEmail) {
+        Boolean emailNotAvailable = DaoFactory.getHouseholdsDao().findByEmail(newEmail).getEmail().equals(newEmail);
+
+        if(validUsername && validPassword && validConfirm && validEmail && !emailNotAvailable) {
             loggedInHousehold.setEmail(newEmail);
             try{
             DaoFactory.getHouseholdsDao().updateEmail(loggedInHousehold.getId(), loggedInHousehold.getEmail());
@@ -46,7 +51,11 @@ public class ChangeEmailServlet extends HttpServlet {
             } catch (SQLException e) {
                 throw new RuntimeException("Unable to update Email.", e);
             }
-        } else {
+        } else if (validUsername && validPassword && validConfirm && emailNotAvailable) {
+            request.setAttribute("emailNotAvailable", true);
+            request.getRequestDispatcher("/WEB-INF/households/change-email.jsp").forward(request, response);
+        }
+        else {
             response.sendRedirect("/profile/change-email");
         }
     }

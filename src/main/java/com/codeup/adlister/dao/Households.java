@@ -6,6 +6,8 @@ import java.sql.SQLException;
 
 public interface Households {
     Household findByUsername(String username);
+    Household findByEmail(String email);
+
     Long insert(Household household);
 
     void updatePassword(long id, String password) throws SQLException;
