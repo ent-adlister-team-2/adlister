@@ -24,20 +24,24 @@ public class DeleteHouseholdServlet extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/households/delete-household.jsp").forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Household loggedInHousehold = (Household) request.getSession().getAttribute("household");
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String confirmPassword = request.getParameter("confirm-password");
+        String confirmUsername = request.getParameter("user-confirm");
 
         Boolean validUsername = loggedInHousehold.getUsername().equals(username);
-        Boolean validPassword = BCrypt.checkpw(loggedInHousehold.getPassword(), password);
-        Boolean validConfirm = BCrypt.checkpw(loggedInHousehold.getPassword(), confirmPassword);
+        Boolean validPassword = BCrypt.checkpw(password, loggedInHousehold.getPassword());
+        Boolean validPasswordConfirm = BCrypt.checkpw(confirmPassword, loggedInHousehold.getPassword());
+        Boolean validUserConfirm = loggedInHousehold.getUsername().equals(confirmUsername);
 
-        if (validUsername && validPassword && validConfirm) {
+        if (validUsername && validPassword && validPasswordConfirm && validUserConfirm) {
             try {
+                request.getSession().invalidate();
                 DaoFactory.getHouseholdsDao().deleteHousehold(loggedInHousehold.getId());
+                response.sendRedirect("/login");
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
