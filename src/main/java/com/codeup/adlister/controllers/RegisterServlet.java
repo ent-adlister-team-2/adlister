@@ -43,7 +43,7 @@ public class RegisterServlet extends HttpServlet {
 
         household.setPassword(hash);
 
-        DaoFactory.getUsersDao().insert(household);
+        DaoFactory.getHouseholdsDao().insert(household);
         response.sendRedirect("/login");
     }
 }
