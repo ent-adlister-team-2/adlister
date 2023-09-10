@@ -40,6 +40,7 @@ public class ChangeUsernameServlet extends HttpServlet {
             loggedInHousehold.setUsername(newUsername);
             try {
                 DaoFactory.getHouseholdsDao().updateUsername(loggedInHousehold.getId(), loggedInHousehold.getUsername());
+                response.sendRedirect("/profile");
             } catch (SQLException e) {
                 throw new RuntimeException("Unable to change Username, please try again.", e);
             }
