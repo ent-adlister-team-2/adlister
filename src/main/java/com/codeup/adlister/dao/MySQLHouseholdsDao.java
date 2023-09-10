@@ -112,7 +112,8 @@ public class MySQLHouseholdsDao implements com.codeup.adlister.dao.Households {
             rs.getInt("id"),
             rs.getString("username"),
             rs.getString("email"),
-            rs.getString("password")
+            rs.getString("password"),
+            rs.getString("name")
         );
     }
 
