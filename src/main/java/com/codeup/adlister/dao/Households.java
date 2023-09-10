@@ -8,5 +8,9 @@ public interface Households {
     Household findByUsername(String username);
     Long insert(Household household);
 
-    void update(long id, String password) throws SQLException;
+    void updatePassword(long id, String password) throws SQLException;
+    void updateUsername(long id, String username) throws SQLException;
+    void updateName(long id, String name) throws SQLException;
+    void updateEmail(long id, String email) throws SQLException;
+    void deleteHousehold(long id) throws SQLException;
 }

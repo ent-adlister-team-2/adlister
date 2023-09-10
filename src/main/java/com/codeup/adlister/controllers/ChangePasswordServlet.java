@@ -33,13 +33,13 @@ public class ChangePasswordServlet extends HttpServlet {
         String newPassword = request.getParameter("new-password");
         String hashedNewPassword = BCrypt.hashpw(newPassword, BCrypt.gensalt());
 
-        Household household = DaoFactory.getUsersDao().findByUsername(username);
-        boolean validAttempt = Password.check(oldPassword, loggedInHousehold.getPassword());
+        boolean validUsername = loggedInHousehold.getUsername().equals(username);
+        boolean validPassword = BCrypt.checkpw(oldPassword, loggedInHousehold.getPassword());
 
-        if(validAttempt) {
-            household.setPassword(hashedNewPassword);
+        if(validUsername && validPassword) {
+            loggedInHousehold.setPassword(hashedNewPassword);
             try {
-                DaoFactory.getUsersDao().update(loggedInHousehold.getId(), hashedNewPassword);
+                DaoFactory.getHouseholdsDao().updatePassword(loggedInHousehold.getId(), hashedNewPassword);
             } catch (SQLException e) {
                 throw new RuntimeException("Unable to update password", e);
             }

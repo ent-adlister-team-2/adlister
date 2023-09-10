@@ -14,7 +14,7 @@ public class DaoFactory {
         return tasksDao;
     }
 
-    public static Households getUsersDao() {
+    public static Households getHouseholdsDao() {
         if (householdsDao == null) {
             householdsDao = new MySQLHouseholdsDao(config);
         }

@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        Household household = DaoFactory.getUsersDao().findByUsername(username);
+        Household household = DaoFactory.getHouseholdsDao().findByUsername(username);
 
         if (household == null) {
             response.sendRedirect("/login");
