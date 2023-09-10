@@ -8,7 +8,7 @@
 <div class="page-wrapper">
   <jsp:include page="../partials/navbar.jsp"/>
   <div class="container">
-    <h1>Please Log In</h1>
+    <h1>Change Password</h1>
     <form action="${pageContext.request.contextPath}/profile/change-password" method="POST">
       <div class="form-group">
         <label for="username">Username</label>

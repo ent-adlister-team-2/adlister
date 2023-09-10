@@ -39,6 +39,7 @@ public class ChangePasswordServlet extends HttpServlet {
             loggedInHousehold.setPassword(hashedNewPassword);
             try {
                 DaoFactory.getHouseholdsDao().updatePassword(loggedInHousehold.getId(), loggedInHousehold.getPassword());
+                response.sendRedirect("/profile");
             } catch (SQLException e) {
                 throw new RuntimeException("Unable to update password", e);
             }

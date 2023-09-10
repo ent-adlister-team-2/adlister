@@ -42,6 +42,7 @@ public class ChangeEmailServlet extends HttpServlet {
             loggedInHousehold.setEmail(newEmail);
             try{
             DaoFactory.getHouseholdsDao().updateEmail(loggedInHousehold.getId(), loggedInHousehold.getEmail());
+            response.sendRedirect("/profile");
             } catch (SQLException e) {
                 throw new RuntimeException("Unable to update Email.", e);
             }

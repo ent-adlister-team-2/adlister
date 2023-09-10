@@ -40,8 +40,11 @@ public class ChangeNameServlet extends HttpServlet {
             loggedInHousehold.setName(name);
             try {
                 DaoFactory.getHouseholdsDao().updateName(loggedInHousehold.getId(), loggedInHousehold.getName());
+                response.sendRedirect("/profile");
             } catch (SQLException e) {
                 throw new RuntimeException("Unable to change name.", e);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
         }
     }
