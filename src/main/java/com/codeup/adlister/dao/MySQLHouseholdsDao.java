@@ -35,6 +35,18 @@ public class MySQLHouseholdsDao implements com.codeup.adlister.dao.Households {
         }
     }
 
+    public Household findByEmail(String email) {
+        String query = "SELECT * FROM tasklister_db.households WHERE email = ? LIMIT 1";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, email);
+            return extractHousehold(stmt.executeQuery());
+
+        } catch (SQLException e) {
+            throw new RuntimeException("Email does not exist.", e);
+        }
+    }
+
     @Override
     public Long insert(Household household) {
         String query = "INSERT INTO tasklister_db.households(username, email, password) VALUES (?, ?, ?)";
