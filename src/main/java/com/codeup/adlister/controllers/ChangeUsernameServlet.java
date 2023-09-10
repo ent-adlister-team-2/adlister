@@ -30,11 +30,13 @@ public class ChangeUsernameServlet extends HttpServlet {
         String oldUsername = request.getParameter("old-username");
         String newUsername = request.getParameter("new-username");
         String password = request.getParameter("password");
+        String confirmPassword = request.getParameter("confirm-password");
 
         Boolean validUsername = loggedInHousehold.getUsername().equals(oldUsername);
         Boolean validPassword = BCrypt.checkpw(password, loggedInHousehold.getPassword());
+        Boolean validConfirm = BCrypt.checkpw(confirmPassword, loggedInHousehold.getPassword());
 
-        if(validUsername && validPassword) {
+        if(validUsername && validPassword && validConfirm) {
             loggedInHousehold.setUsername(newUsername);
             try {
                 DaoFactory.getHouseholdsDao().updateUsername(loggedInHousehold.getId(), loggedInHousehold.getUsername());

@@ -12,16 +12,25 @@
         <h1>Welcome, ${household.username}!</h1>
         <div>
             <h2>Username: ${household.username}</h2>
+            <a href="${pageContext.request.contextPath}/profile/change-username">
+                <button>Change Username</button>
+            </a>
         </div>
         <div>
             <h2>Email: ${household.email}</h2>
+            <a href="${pageContext.request.contextPath}/profile/change-email">
+                <button>Change Email</button>
+            </a>
         </div>
         <div>
             <h2>Household Name: ${household.name}</h2>
+            <a href="${pageContext.request.contextPath}/profile/change-name">
+                <button>Change Name</button>
+            </a>
         </div>
         <div>
             <h2>Password:</h2>
-            <a href="/change-password">
+            <a href="${pageContext.request.contextPath}/profile/change-password">
                 <button>Change Password</button>
             </a>
         </div>
