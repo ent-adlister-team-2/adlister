@@ -34,6 +34,13 @@
                 <button>Change Password</button>
             </a>
         </div>
+
+        <div>
+            <h2>Delete Your Account</h2>
+            <a href="${pageContext.request.contextPath}/profile/delete">
+                <button>Delete</button>
+            </a>
+        </div>
     </div>
 
 
