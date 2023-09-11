@@ -38,12 +38,12 @@
                     The email you selected is not available! Please choose a different email.
                 </div>
             </c:if>
-            <center>
-                <a href="" class="text-center">
-                    <input class="submit-btn" type="submit">
+            <div>
+                <button type="submit">
                     Submit
                     <span></span>
-                </a></center>
+                </button>
+            </div>
         </form>
     </div>
 
