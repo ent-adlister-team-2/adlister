@@ -1,5 +1,3 @@
-<jsp:useBean id="title" scope="request" type=""/>
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -14,7 +12,7 @@
     <h1>Task Details</h1>
     <div class="viewbox">
         <div class="taskTitle">
-            <%=%>>
+            ${name}
         </div>
         <div class="taskDescription">
             ${description}

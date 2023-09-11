@@ -40,12 +40,13 @@ public class MySQLTasksDao implements Tasks {
     @Override
     public Long insert(Task task) {
         try {
-            String insertQuery = "INSERT INTO tasklister_db.tasks(id, name, description, household_id) VALUES (?, ?, ?, ?)";
+            String insertQuery = "INSERT INTO tasklister_db.tasks(id, name, description, repeatable, household_id) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, task.getId());
             stmt.setString(2, task.getName());
             stmt.setString(3, task.getDescription());
-            stmt.setLong(4, task.getHouseholdId());
+            stmt.setInt(4, task.getRepeatable() ? 1 : 0);
+            stmt.setLong(5, task.getHouseholdId());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -68,8 +69,8 @@ public class MySQLTasksDao implements Tasks {
                 rs.getLong("id"),
                 rs.getString("name"),
                 rs.getString("description"),
-                rs.getBoolean("status"),
                 rs.getBoolean("repeatable"),
+                rs.getBoolean("status"),
                 rs.getLong("household_id")
         );
     }
