@@ -4,11 +4,11 @@
     <jsp:include page="../partials/head.jsp"/>
     <title>Title</title>
 </head>
-<body class="background">
+<body class="homepage-background">
 <div class="page-wrapper">
     <jsp:include page="../partials/navbar.jsp"/>
     <div class="container login-box">
-        <h1 class="title">Change Household Name</h1>
+        <h1 class="title">Edit Task</h1>
         <form action="${pageContext.request.contextPath}/profile/change-name" method="POST">
             <div class="user-box">
                 <label for="username"></label>

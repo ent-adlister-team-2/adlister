@@ -21,7 +21,7 @@ public class ChangeNameServlet extends HttpServlet {
         }
         Household household = (Household) request.getSession().getAttribute("household");
         request.setAttribute("household", household);
-        request.getRequestDispatcher("/WEB-INF/households/change-name.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/households/edit.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
