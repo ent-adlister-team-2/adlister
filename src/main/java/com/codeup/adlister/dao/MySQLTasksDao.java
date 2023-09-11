@@ -57,18 +57,16 @@ public class MySQLTasksDao implements Tasks {
     }
 
     @Override
-    public long deleteTask(long id) {
+    public void deleteTask(long id) {
         try {
-            PreparedStatement stmt = connection.prepareStatement("DELETE FROM tasklister_db.tasks WHERE id = ?", Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement stmt = connection.prepareStatement("DELETE FROM tasklister_db.tasks WHERE id = ?");
             stmt.setLong(1, id);
-            stmt.executeUpdate();
-            ResultSet rs = stmt.getGeneratedKeys();
-            rs.next();
-            return rs.getLong(1);
+            stmt.executeQuery();
         } catch (SQLException e) {
             throw new RuntimeException("Error deleting a task.", e);
         }
     }
+
     @Override
     public long updateName(long id, String name) {
         try {
@@ -83,6 +81,7 @@ public class MySQLTasksDao implements Tasks {
             throw new RuntimeException("Error updating task name.", e);
         }
     }
+
     @Override
     public long updateDescription(long id, String description) {
         try {
@@ -97,6 +96,7 @@ public class MySQLTasksDao implements Tasks {
             throw new RuntimeException("Error updating task description.", e);
         }
     }
+
     @Override
     public long updateStatus(long id, int status) {
         try {
@@ -111,6 +111,7 @@ public class MySQLTasksDao implements Tasks {
             throw new RuntimeException("Error updating task status.", e);
         }
     }
+
     @Override
     public long updateRepeatable(long id, int repeatable) {
         try {
@@ -125,6 +126,7 @@ public class MySQLTasksDao implements Tasks {
             throw new RuntimeException("Error updating task repeatable.", e);
         }
     }
+
     @Override
     public long updateCategory(long id, String category) {
         try {
@@ -147,7 +149,7 @@ public class MySQLTasksDao implements Tasks {
         statement.setLong(1, taskId);
         ResultSet rs = statement.executeQuery();
         rs.next();
-        return extractTask(rs) ;
+        return extractTask(rs);
     }
 
     private Task extractTask(ResultSet rs) throws SQLException {
