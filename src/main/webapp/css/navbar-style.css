@@ -4,11 +4,13 @@ This css folder is only for navbar styling
 
 /* Apply background color and styles to the navbar */
 .navbar {
-    background-color: black;
     padding: 10px 0;
     color: #ffffff;
 }
-
+.navbar-back-ground{
+    background: rgb(0,15,0);
+    background: linear-gradient(90deg, rgba(0,15,0,1) 0%, rgba(20,47,138,1) 28%, rgba(22,209,202,1) 49%, rgba(20,47,138,1) 80%, rgba(0,15,0,1) 97%);
+}
 .nav-title{
     font-size: 1.6rem;
     color: white;
@@ -68,13 +70,13 @@ This css folder is only for navbar styling
 
 
 .navbar li a:hover {
-    background: #03f40f;
+    background: #03f4f4;
     color: #fff;
     border-radius: 5px;
-    box-shadow: 0 0 5px #03f40f,
-    0 0 25px #03f40f,
-    0 0 50px #03f40f,
-    0 0 100px #03f40f;
+    box-shadow: 0 0 5px #03f4f4,
+    0 0 25px #03f4f4,
+    0 0 50px #03f4f4,
+    0 0 100px #03f4f4;
 }
 
 .submit-text{
