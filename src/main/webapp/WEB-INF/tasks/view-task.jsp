@@ -7,7 +7,7 @@
     <title>Viewing Task Details</title>
 </head>
 <body class="background">
-<jsp:include page="partials/navbar.jsp" />
+<jsp:include page="../partials/navbar.jsp" />
 <div class="container background">
     <h1>Task Details</h1>
     <div class="viewbox">

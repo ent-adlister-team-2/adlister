@@ -61,7 +61,7 @@ This css folder is only for navbar styling
 }
 .navbar li {
     margin: 0 10px;
-    background-color: black;
+    background-color: #ffffff;
     border: 2px solid white;
     border-radius: 10%;
 }
@@ -69,7 +69,7 @@ This css folder is only for navbar styling
 
 .navbar li a:hover {
     background: #03f40f;
-    color: #000000;
+    color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 5px #03f40f,
     0 0 25px #03f40f,
