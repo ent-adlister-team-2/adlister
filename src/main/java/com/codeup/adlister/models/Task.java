@@ -55,9 +55,6 @@ public class Task {
         this.householdId = householdId;
     }
 
-
-
-
     public long getId() {
         return id;
     }
