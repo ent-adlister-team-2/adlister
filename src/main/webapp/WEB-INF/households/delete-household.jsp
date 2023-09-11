@@ -4,7 +4,7 @@
     <jsp:include page="../partials/head.jsp"/>
     <title>Delete household</title>
 </head>
-<body class="background">
+<body class="homepage-background">
 <div class="page-wrapper">
     <jsp:include page="../partials/navbar.jsp"/>
     <div class="container login-box">
