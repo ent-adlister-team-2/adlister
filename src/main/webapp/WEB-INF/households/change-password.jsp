@@ -4,25 +4,29 @@
   <jsp:include page="../partials/head.jsp" />
     <title>Title</title>
 </head>
-<body>
+<body class="background">
 <div class="page-wrapper">
   <jsp:include page="../partials/navbar.jsp"/>
-  <div class="container">
-    <h1>Change Password</h1>
+  <div class="container login-box">
+    <h1 class="title">Change Password</h1>
     <form action="${pageContext.request.contextPath}/profile/change-password" method="POST">
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input id="username" name="username" class="form-control" type="text">
+      <div class="user-box">
+        <label for="username"></label>
+        <input id="username" name="username" class="form-control" type="text" placeholder="Username">
       </div>
-      <div class="form-group">
-        <label for="old-password">Old Password</label>
-        <input id="old-password" name="old-password" class="form-control" type="password">
+      <div class="user-box">
+        <label for="old-password"></label>
+        <input id="old-password" name="old-password" class="form-control" type="password" placeholder="Old Password">
       </div>
-      <div class="form-group">
-        <label for="new-password">New Password</label>
-        <input id="new-password" name="new-password" class="form-control" type="password">
+      <div class="user-box">
+        <label for="new-password"></label>
+        <input id="new-password" name="new-password" class="form-control" type="password" placeholder=" New Password">
       </div>
-      <input type="submit" class="btn btn-primary btn-block" value="Log In">
+      <a href="" class="text-center">
+        <input class="submit-btn" type="submit">
+        Submit
+        <span></span>
+      </a>
     </form>
   </div>
 

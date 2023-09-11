@@ -8,9 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <jsp:include page="../partials/head.jsp"/>
+    <title>Change username</title>
 </head>
-<body>
+<body class="background">
+<div class="page-wrapper">
+    <jsp:include page="../partials/navbar.jsp"/>
 
+    <h1>Welcome to change username</h1>
+    <h3>SOME FORM</h3>
+</div>
 </body>
 </html>

@@ -1,32 +1,36 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <jsp:include page="../partials/head.jsp" />
+    <jsp:include page="../partials/head.jsp"/>
     <title>Title</title>
 </head>
-<body>
+<body class="background">
 <div class="page-wrapper">
     <jsp:include page="../partials/navbar.jsp"/>
-    <div class="container">
-        <h1>Change Household Name</h1>
+    <div class="container login-box">
+        <h1 class="title">Change Household Name</h1>
         <form action="${pageContext.request.contextPath}/profile/change-name" method="POST">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input id="username" name="username" class="form-control" type="text">
+            <div class="user-box">
+                <label for="username"></label>
+                <input id="username" name="username" class="form-control" type="text" placeholder="Username">
             </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input id="password" name="password" class="form-control" type="password">
+            <div class="user-box">
+                <label for="password"></label>
+                <input id="password" name="password" class="form-control" type="password" placeholder="Password">
             </div>
-            <div class="form-group">
-                <label for="confirm-password">Confirm Your Password</label>
-                <input id="confirm-password" name="confirm-password" class="form-control" type="password">
+            <div class="user-box">
+                <label for="confirm-password"></label>
+                <input id="confirm-password" name="confirm-password" class="form-control" type="password" placeholder="Confirm Your Password">
             </div>
-            <div class="form-group">
-                <label for="name">New Household Name</label>
-                <input id="name" name="name" class="form-control" type="text">
+            <div class="user-box">
+                <label for="name"></label>
+                <input id="name" name="name" class="form-control" type="text" placeholder="New Household Name">
             </div>
-            <input type="submit" class="btn btn-primary btn-block" value="Log In">
+            <a href="" class="text-center">
+                <input class="submit-btn" type="submit">
+                Submit
+                <span></span>
+            </a>
         </form>
     </div>
 
