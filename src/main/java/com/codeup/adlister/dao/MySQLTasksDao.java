@@ -72,13 +72,18 @@ public class MySQLTasksDao implements Tasks {
     @Override
     public long updateName(long id, String name) {
         try {
-            PreparedStatement stmt = connection.prepareStatement("UPDATE tasklister_db.tasks SET name = ? WHERE id = ?");
+            PreparedStatement stmt = connection.prepareStatement("UPDATE tasklister_db.tasks SET name = ? WHERE id = ?", Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, name);
             stmt.setLong(2, id);
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
-            rs.next();
-            return rs.getLong(1);
+//            rs.next();
+//            return rs.getLong(1);
+            if(rs.next()) {
+                System.out.println("updateName rs.next is false!");
+                return rs.getLong(1);
+            } else
+                return -1L;
         } catch (SQLException e) {
             throw new RuntimeException("Error updating task name.", e);
         }
@@ -86,13 +91,18 @@ public class MySQLTasksDao implements Tasks {
     @Override
     public long updateDescription(long id, String description) {
         try {
-            PreparedStatement stmt = connection.prepareStatement("UPDATE tasklister_db.tasks SET description = ? WHERE id = ?");
+            PreparedStatement stmt = connection.prepareStatement("UPDATE tasklister_db.tasks SET description = ? WHERE id = ?", Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, description);
             stmt.setLong(2, id);
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
-            rs.next();
-            return rs.getLong(1);
+//            rs.next();
+//            return rs.getLong(1);
+            if(rs.next()) {
+                System.out.println("updateName rs.next is false!");
+                return rs.getLong(1);
+            } else
+                return -1L;
         } catch (SQLException e) {
             throw new RuntimeException("Error updating task description.", e);
         }
@@ -100,13 +110,18 @@ public class MySQLTasksDao implements Tasks {
     @Override
     public long updateStatus(long id, int status) {
         try {
-            PreparedStatement stmt = connection.prepareStatement("UPDATE tasklister_db.tasks SET status = ? WHERE id = ?");
+            PreparedStatement stmt = connection.prepareStatement("UPDATE tasklister_db.tasks SET status = ? WHERE id = ?", Statement.RETURN_GENERATED_KEYS);
             stmt.setInt(1, status);
             stmt.setLong(2, id);
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
-            rs.next();
-            return rs.getLong(1);
+//            rs.next();
+//            return rs.getLong(1);
+            if(rs.next()) {
+                System.out.println("updateName rs.next is false!");
+                return rs.getLong(1);
+            } else
+                return -1L;
         } catch (SQLException e) {
             throw new RuntimeException("Error updating task status.", e);
         }
@@ -114,13 +129,18 @@ public class MySQLTasksDao implements Tasks {
     @Override
     public long updateRepeatable(long id, int repeatable) {
         try {
-            PreparedStatement stmt = connection.prepareStatement("UPDATE tasklister_db.tasks SET repeatable = ? WHERE id = ?");
+            PreparedStatement stmt = connection.prepareStatement("UPDATE tasklister_db.tasks SET repeatable = ? WHERE id = ?", Statement.RETURN_GENERATED_KEYS);
             stmt.setInt(1, repeatable);
             stmt.setLong(2, id);
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
-            rs.next();
-            return rs.getLong(1);
+//            rs.next();
+//            return rs.getLong(1);
+            if(rs.next()) {
+                System.out.println("updateName rs.next is false!");
+                return rs.getLong(1);
+            } else
+                return -1L;
         } catch (SQLException e) {
             throw new RuntimeException("Error updating task repeatable.", e);
         }
@@ -128,13 +148,18 @@ public class MySQLTasksDao implements Tasks {
     @Override
     public long updateCategory(long id, String category) {
         try {
-            PreparedStatement stmt = connection.prepareStatement("UPDATE tasklister_db.tasks SET category = ? WHERE id = ?");
+            PreparedStatement stmt = connection.prepareStatement("UPDATE tasklister_db.tasks SET category = ? WHERE id = ?", Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, category);
             stmt.setLong(2, id);
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
-            rs.next();
-            return rs.getLong(1);
+//            rs.next();
+//            return rs.getLong(1);
+            if(rs.next()) {
+                System.out.println("updateName rs.next is false!");
+                return rs.getLong(1);
+            } else
+                return -1L;
         } catch (SQLException e) {
             throw new RuntimeException("Error updating task category.", e);
         }
