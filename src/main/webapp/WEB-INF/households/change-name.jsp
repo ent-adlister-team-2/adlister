@@ -26,11 +26,12 @@
                 <label for="name"></label>
                 <input id="name" name="name" class="form-control" type="text" placeholder="New Household Name">
             </div>
-            <a href="" class="text-center">
-                <input class="submit-btn" type="submit">
-                Submit
-                <span></span>
-            </a>
+            <div>
+                <button type="submit">
+                    Submit
+                    <span></span>
+                </button>
+            </div>
         </form>
     </div>
 
