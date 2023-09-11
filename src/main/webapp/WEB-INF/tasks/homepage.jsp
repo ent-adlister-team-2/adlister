@@ -18,6 +18,7 @@
             <div> ${task.description} </div>
             <div> Repeatable: ${task.repeatable} </div>
             <div> Status: ${task.status} </div>
+            <a href="${pageContext.request.contextPath}/tasks/view?id=${task.id}">View Task Details</a>
         </div>
         </c:forEach>
 

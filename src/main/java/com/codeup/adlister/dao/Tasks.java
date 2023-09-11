@@ -19,6 +19,5 @@ public interface Tasks {
     long updateRepeatable(long id, int repeatable);
     long updateCategory(long id, String category);
 
-
-    void viewTask(Task task) throws SQLException;
+    Task findById(long taskId) throws SQLException;
 }

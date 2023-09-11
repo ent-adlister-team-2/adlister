@@ -17,6 +17,7 @@ public class ViewProfileServlet extends HttpServlet {
             response.sendRedirect("/login");
             return;
         }
+        System.out.println("inside /profile doPost");
         Household sessionHousehold = (Household) request.getSession().getAttribute("household");
         Household loggedInHousehold = DaoFactory.getHouseholdsDao().findByUsername(sessionHousehold.getUsername());
         request.setAttribute("household", loggedInHousehold);

@@ -141,14 +141,16 @@ public class MySQLTasksDao implements Tasks {
     }
 
     @Override
-    public void viewTask(Task task) throws SQLException {
+    public Task findById(long taskId) throws SQLException {
         String viewSingleTask = "SELECT * FROM tasklister_db.tasks WHERE id= ?";
         PreparedStatement statement = connection.prepareStatement(viewSingleTask);
+        statement.setLong(1, taskId);
         ResultSet rs = statement.executeQuery();
-        extractAd(rs);
+        rs.next();
+        return extractTask(rs) ;
     }
 
-    private Task extractAd(ResultSet rs) throws SQLException {
+    private Task extractTask(ResultSet rs) throws SQLException {
         return new Task(
                 rs.getLong("id"),
                 rs.getString("name"),
@@ -162,7 +164,7 @@ public class MySQLTasksDao implements Tasks {
     private List<Task> createTasksFromResults(ResultSet rs) throws SQLException {
         List<Task> tasks = new ArrayList<>();
         while (rs.next()) {
-            tasks.add(extractAd(rs));
+            tasks.add(extractTask(rs));
         }
         return tasks;
     }
