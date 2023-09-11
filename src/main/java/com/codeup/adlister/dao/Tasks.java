@@ -12,7 +12,9 @@ public interface Tasks {
 
     // insert a new ad and return the new ad's id
     Long insert(Task task);
-    long deleteTask(long id);
+    void deleteTask(long id);
+
+
     long updateName(long id, String name);
     long updateDescription(long id, String description);
     long updateStatus(long id, int status);

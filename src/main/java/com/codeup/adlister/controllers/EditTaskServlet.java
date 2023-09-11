@@ -1,3 +1,4 @@
+
 //package com.codeup.adlister.controllers;
 //
 //import com.codeup.adlister.dao.DaoFactory;
@@ -23,19 +24,3 @@
 //        request.getRequestDispatcher("/WEB-INF/tasks/edit.jsp").forward(request, response);
 //
 //    }
-//    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-//        String name = request.getParameter("name");
-//        String description = request.getParameter("description");
-//        String category = request.getParameter("category");
-//        Boolean complete = Boolean.parseBoolean(request.getParameter("completion-status"));
-//        Boolean repeatable = Boolean.parseBoolean(request.getParameter("repeatable"));
-//        request.getParameter("task");
-//        try {
-//            DaoFactory.getTasksDao().updateName(name);
-//
-//        } catch(SQLException e) {
-//            throw new RuntimeException("Error editing your task.", e);
-//        }
-//
-//    }
-//}

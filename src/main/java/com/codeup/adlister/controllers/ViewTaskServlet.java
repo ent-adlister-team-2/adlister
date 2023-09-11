@@ -24,9 +24,7 @@ public class ViewTaskServlet extends HttpServlet {
 
         try {
         long taskId = Long.parseLong(req.getParameter("id"));
-            System.out.println(taskId);
           Task taskDetails = DaoFactory.getTasksDao().findById(taskId);
-            System.out.println(taskDetails);
         req.setAttribute("task", taskDetails);
             req.getRequestDispatcher("/WEB-INF/tasks/view-task.jsp").forward(req, resp);
         } catch (SQLException e) {
