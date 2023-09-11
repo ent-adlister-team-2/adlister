@@ -5,7 +5,7 @@
     <jsp:include page="../partials/head.jsp"/>
     <title>Title</title>
 </head>
-<body class="background">
+<body class="homepage-background">
 <div class="page-wrapper">
     <c:set var="emailNotAvailable" value="${requestScope.emailNotAvailable}"/>
     <jsp:include page="../partials/navbar.jsp"/>

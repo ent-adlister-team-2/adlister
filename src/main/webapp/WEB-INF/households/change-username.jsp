@@ -11,7 +11,7 @@
     <jsp:include page="../partials/head.jsp"/>
     <title>Change username</title>
 </head>
-<body class="background">
+<body class="homepage-background">
 <div class="page-wrapper">
     <jsp:include page="../partials/navbar.jsp"/>
 

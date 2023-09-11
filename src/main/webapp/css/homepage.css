@@ -11,3 +11,12 @@
     border-radius: 10px;
     color: white;
 }
+.task-list-image{
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+.homepage-text{
+    text-decoration-color: white;
+    font-size: 1rem;
+}
