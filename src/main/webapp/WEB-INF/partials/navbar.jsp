@@ -5,7 +5,7 @@
     <a class="navbar nav-title margin-left-1" href="/tasks">Tasklister</a>
     <ul class="navbar ul">
         <c:choose>
-            <c:when test="${sessionScope.user == null}">
+            <c:when test="${sessionScope.household == null}">
                 <ul class="navbar ul-left">
                     <li class="navbar li"><a href="/profile">Profile</a></li>
 <%--                    <li class="navbar li"><a href="/tasks">Home/Tasks</a></li>--%>
@@ -18,6 +18,7 @@
             </c:when>
             <c:otherwise>
                 <li class="navbar li"><a href="/logout">Logout</a></li>
+                <li class="navbar li"><a href="/profile">Profile</a></li>
             </c:otherwise>
         </c:choose>
     </ul>
