@@ -30,7 +30,8 @@
             </div>
             <a href="">
                 <input class="submit-btn" type="submit">
-                <span class="submit-text">Submit</span>
+                Submit
+                <span></span>
             </a>
         </form>
     </div>
