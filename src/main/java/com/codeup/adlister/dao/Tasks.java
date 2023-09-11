@@ -12,6 +12,13 @@ public interface Tasks {
 
     // insert a new ad and return the new ad's id
     Long insert(Task task);
+    long deleteTask(long id);
+    long updateName(long id, String name);
+    long updateDescription(long id, String description);
+    long updateStatus(long id, int status);
+    long updateRepeatable(long id, int repeatable);
+    long updateCategory(long id, String category);
+
 
     void viewTask(Task task) throws SQLException;
 }
