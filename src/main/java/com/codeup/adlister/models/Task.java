@@ -1,6 +1,7 @@
 package com.codeup.adlister.models;
 
 public class Task {
+
     private long id;
     private String name;
     private String description;
@@ -23,19 +24,11 @@ public class Task {
         this.description = description;
     }
 
-    public Task(int id, String name, String description, boolean repeatable, int householdId) {
+    public Task(long id, String name, String description, Boolean repeatable, int householdId) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.repeatable = repeatable;
-        this.householdId = householdId;
-    }
-
-    public Task(String name, String description, Boolean repeatable, Boolean status, long householdId) {
-        this.name = name;
-        this.description = description;
-        this.repeatable = repeatable;
-        this.status = status;
         this.householdId = householdId;
     }
 
@@ -48,12 +41,22 @@ public class Task {
         this.householdId = householdId;
     }
 
-    public Task(String name, String description, Boolean status, long householdId) {
+    public Task(String name, String description, Boolean repeatable, long householdId) {
         this.name = name;
         this.description = description;
+        this.repeatable = repeatable;
+        this.householdId = householdId;
+    }
+    public Task(String name, String description, Boolean repeatable, Boolean status, long householdId) {
+        this.name = name;
+        this.description = description;
+        this.repeatable = repeatable;
         this.status = status;
         this.householdId = householdId;
     }
+
+
+
 
     public long getId() {
         return id;
