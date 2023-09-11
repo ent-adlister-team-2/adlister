@@ -28,7 +28,7 @@
                 <label for="confirm_password"></label>
                 <input id="confirm_password" name="confirm_password" class="form-control" type="password" placeholder=" Confirm Password">
             </div>
-            <a href="">
+            <a href="" class="text-center">
                 <input class="submit-btn" type="submit">
                 Submit
                 <span></span>

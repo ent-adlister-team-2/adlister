@@ -15,14 +15,14 @@
 
             <div class="user-box">
                 <label for="username"></label>
-                <input id="username" name="username" class="form-control" type="text" placeholder="Username">
+                <input id="username" name="username" type="text" placeholder="Username">
             </div>
             <div class="user-box">
                 <label for="password"></label>
-                <input id="password" name="password" class="form-control" type="password" placeholder="Password">
+                <input id="password" name="password" type="password" placeholder="Password">
             </div>
             <center>
-                <a href="">
+                <a href="" class="text-center">
                     <input class="submit-btn" type="submit">
                     Submit
                     <span></span>

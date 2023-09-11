@@ -6,12 +6,12 @@
         <jsp:param name="title" value="Viewing All The Ads" />
     </jsp:include>
 </head>
-<body>
+<body class="background">
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <div class="container">
     <h1>Household Tasks</h1>
     <a href="${pageContext.request.contextPath}/tasks/create"><button>Create Task</button></a>
-    <div class="row">
+    <div class="row ">
         <c:forEach var="task" items="${tasks}">
         <div class="taskCard">
             <h2> ${task.name} </h2>
