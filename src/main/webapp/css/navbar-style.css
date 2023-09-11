@@ -61,24 +61,22 @@ This css folder is only for navbar styling
 }
 .navbar li {
     margin: 0 10px;
-    background-color: white;
-    border: 2px solid black;
+    background-color: black;
+    border: 2px solid white;
     border-radius: 10%;
 }
 
 
 .navbar li a:hover {
     background: #03f40f;
-    color: #fff;
+    color: #000000;
     border-radius: 5px;
     box-shadow: 0 0 5px #03f40f,
     0 0 25px #03f40f,
     0 0 50px #03f40f,
     0 0 100px #03f40f;
 }
-.submit-btn{
-    opacity: 1%;
-}
+
 .submit-text{
     font-size: 10px;
 }

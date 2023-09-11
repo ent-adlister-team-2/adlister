@@ -22,11 +22,12 @@
         <label for="new-password"></label>
         <input id="new-password" name="new-password" class="form-control" type="password" placeholder=" New Password">
       </div>
-      <a href="" class="text-center">
-        <input class="submit-btn" type="submit">
-        Submit
-        <span></span>
-      </a>
+      <div>
+        <button type="submit">
+          Submit
+          <span></span>
+        </button>
+      </div>
     </form>
   </div>
 
