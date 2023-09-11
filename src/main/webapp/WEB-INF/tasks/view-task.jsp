@@ -10,32 +10,20 @@
 <body class="background">
 <jsp:include page="../partials/navbar.jsp" />
 <div class="container background">
-
-    <c:choose>
-        <c:when test="${task.getId() == sessionScope.taskId}">
             <div class = "individual">
             <h1>${task.getName()}</h1>
             <p>${task.getDescription()}</p>
             <p>${task.getRepeatable()}</p>
             </div>
-            <form action="/task/edit" method="GET">
-                <input name="edit" value="${task.getId()}" type="hidden">
-                <button type="submit">Edit</button>
-            </form>
+<%--            <form action="/tasks/view/edit" method="get">--%>
+<%--                <input name="edit" value="${task.id}" type="submit">--%>
+<%--                <button type="submit">Edit</button>--%>
+<%--            </form>--%>
+            <a href="/tasks/view/edit?id=${task.id}">Edit Task</a>
             <form action="/tasks/delete" method="POST">
-                <input name="delete" value="${task.getId()}" type="hidden">
+                <input name="delete" value="${task.id}" type="submit">
                 <button type="submit">Delete</button>
             </form>
-        </c:when>
-        <c:otherwise>
-            <h1>${task.getName()}</h1>
-            <p>${task.getDescription()}</p>
-            <p>${task.getRepeatable()}</p>
-            <p>${task.getStatus()}</p>
-        </c:otherwise>
-    </c:choose>
-
-
 </div>
 </body>
 </html>
