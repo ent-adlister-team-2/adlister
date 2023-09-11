@@ -5,7 +5,7 @@
         <jsp:param name="title" value="Please Log In"/>
     </jsp:include>
 </head>
-<body class="background">
+<body class="homepage-background">
 <div class="page-wrapper">
     <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
     <div class="container">
