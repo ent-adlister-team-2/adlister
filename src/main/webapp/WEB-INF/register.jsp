@@ -7,7 +7,7 @@
         <jsp:param name="title" value="Register For Tasklister!" />
     </jsp:include>
 </head>
-<body class="background">
+<body class="homepage-background">
     <jsp:include page="partials/navbar.jsp" />
     <div class="container login-box">
         <h1 class="title">Please fill in your information.</h1>
