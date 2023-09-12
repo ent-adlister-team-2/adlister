@@ -11,6 +11,10 @@
     <jsp:include page="../partials/navbar.jsp"/>
     <div class="container login-box">
         <h1 class="title">Change Email</h1>
+
+        <c:if test="${not empty emailNotAvailable}">
+            <h2 style="color: white">Email not available.</h2>
+        </c:if>
         <form id="change-email-form" action="${pageContext.request.contextPath}/profile/change-email" method="POST">
             <div class="user-box">
                 <label for="password"></label>

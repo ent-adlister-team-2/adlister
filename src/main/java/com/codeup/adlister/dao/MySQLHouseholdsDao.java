@@ -1,10 +1,13 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Household;
+import com.codeup.adlister.models.Task;
 import com.codeup.adlister.util.Config;
 import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MySQLHouseholdsDao implements com.codeup.adlister.dao.Households {
     private Connection connection;
@@ -22,14 +25,28 @@ public class MySQLHouseholdsDao implements com.codeup.adlister.dao.Households {
         }
     }
 
-
+    @Override
+    public List<Household> all() {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM tasklister_db.households");
+            ResultSet rs = stmt.executeQuery();
+            return createHouseholdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
     @Override
     public Household findByUsername(String username) {
         String query = "SELECT * FROM tasklister_db.households WHERE username = ? LIMIT 1";
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setString(1, username);
-            return extractHousehold(stmt.executeQuery());
+            ResultSet rs = stmt.executeQuery();
+            if(!rs.next()) {
+                return null;
+            }
+            return extractHousehold(rs);
         } catch (SQLException e) {
             throw new RuntimeException("User does not exist.", e);
         }
@@ -40,7 +57,11 @@ public class MySQLHouseholdsDao implements com.codeup.adlister.dao.Households {
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setString(1, email);
-            return extractHousehold(stmt.executeQuery());
+            ResultSet rs = stmt.executeQuery();
+            if(!rs.next()) {
+                return null;
+            }
+            return extractHousehold(rs);
 
         } catch (SQLException e) {
             throw new RuntimeException("Email does not exist.", e);
@@ -102,7 +123,7 @@ public class MySQLHouseholdsDao implements com.codeup.adlister.dao.Households {
             stmt.setLong(2, id);
             stmt.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException("Error resetting your email.", e);
+            e.printStackTrace();
         }
     }
 
@@ -117,9 +138,6 @@ public class MySQLHouseholdsDao implements com.codeup.adlister.dao.Households {
     }
 
     private Household extractHousehold(ResultSet rs) throws SQLException {
-        if (! rs.next()) {
-            return null;
-        }
         return new Household(
             rs.getInt("id"),
             rs.getString("username"),
@@ -127,6 +145,13 @@ public class MySQLHouseholdsDao implements com.codeup.adlister.dao.Households {
             rs.getString("password"),
             rs.getString("name")
         );
+    }
+    private List<Household> createHouseholdsFromResults(ResultSet rs) throws SQLException {
+        List<Household> households = new ArrayList<>();
+        while (rs.next()) {
+            households.add(extractHousehold(rs));
+        }
+        return households;
     }
 
 }

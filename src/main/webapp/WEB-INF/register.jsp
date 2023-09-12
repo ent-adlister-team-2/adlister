@@ -38,5 +38,6 @@
 
     </form>
 </div>
+<script src="../js/register_validation.js"></script>
 </body>
 </html>
