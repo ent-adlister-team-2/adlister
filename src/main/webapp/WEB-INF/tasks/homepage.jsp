@@ -7,23 +7,33 @@
     </jsp:include>
 </head>
 <body class="homepage-background">
-<jsp:include page="/WEB-INF/partials/navbar.jsp" />
+<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="page-wrapper">
-  <div class="container">
-    <h1>Household Tasks</h1>
-    <a href="${pageContext.request.contextPath}/tasks/create"><button>Create Task</button></a>
-    <div class="row ">
-        <c:forEach var="task" items="${tasks}">
-        <div class="taskCard">
-            <h2 class = "title"> ${task.name} </h2>
-            <div class = "title"> ${task.description} </div>
-            <div class = "title"> Repeatable: ${task.repeatable} </div>
-            <div class = "title"> Status: ${task.status} </div>
-            <a href="${pageContext.request.contextPath}/tasks/view?id=${task.id}">View Task Details</a>
+    <div class ="container">
+        <h1 class="household-name">${household.name}</h1>
+        <h1 class="household-name">Household Tasks</h1>
+        <button class="btn margin-top-btn">Create New Task
+            <a href="${pageContext.request.contextPath}/tasks/create">
+        </a>
+        </button>
+    </div>
+    <div class="container">
+        <div class="tasks row d-flex">
+            <c:forEach var="task" items="${tasks}">
+            <div class="card">
+                <div class="content">
+                <h2 class="heading"> ${task.name} </h2>
+                <div class="para"> ${task.description} </div>
+                <div> Repeatable: ${task.repeatable} </div>
+                <div> Status: ${task.status} </div>
+                <button class="btn" type="submit">
+                <a href="${pageContext.request.contextPath}/tasks/view?id=${task.id}">View Task Details</a>
+                </button>
+                </div>
+            </div>
+        </c:forEach>
         </div>
     </div>
-      </c:forEach>
- </div>
 </div>
 </body>
 </html>
