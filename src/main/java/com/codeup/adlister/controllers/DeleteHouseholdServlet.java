@@ -45,6 +45,8 @@ public class DeleteHouseholdServlet extends HttpServlet {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
+        } else {
+            response.sendRedirect("/profile/delete");
         }
     }
 }

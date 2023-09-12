@@ -19,6 +19,9 @@
         </button>
     </div>
     <div class="container">
+        <form action="${pageContext.request.contextPath}/tasks/sort" method="get">
+            <button type="submit" name="sort">Sort</button>
+        </form>
         <div class="tasks row d-flex">
             <c:forEach var="task" items="${tasks}">
             <div class="card">
