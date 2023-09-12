@@ -12,8 +12,9 @@
     <div class ="container">
         <h1 class="household-name">${household.name}</h1>
         <h1 class="household-name">Household Tasks</h1>
-        <button class="btn margin-top-btn">Create New Task
+        <button class="btn margin-top-btn">
             <a href="${pageContext.request.contextPath}/tasks/create">
+                Create New Task
         </a>
         </button>
     </div>
