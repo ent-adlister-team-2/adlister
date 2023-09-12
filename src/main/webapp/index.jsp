@@ -22,49 +22,41 @@
             <p>
                 Welcome to Task Lister - Simplify Your Household Chores!
 
-                Task Lister is your go-to platform for effortlessly managing household chores. Designed with efficiency in mind, Task Lister empowers you to keep track of your to-do list and conquer your tasks with ease. Here's what you can do:
+                Task Lister is your go-to platform for effortlessly managing household chores. Designed with efficiency
+                in mind, Task Lister empowers you to keep track of your to-do list and conquer your tasks with ease.
+                Here's what you can do:
 
             <ol>
                 <li>
                     Create and Customize Tasks:
                     <ul>
-                        <li>Add tasks specific to your household chores, from cleaning and organizing to grocery shopping and more.</li>
-                        <li>Customize task names, descriptions, and due dates to suit your needs.</li>
+                        <li>Add tasks specific to your household chores, from cleaning and organizing to grocery
+                            shopping and more.
+                        </li>
+                        <li>Customize task names, descriptions, and whether a task is repeatable or not</li>
                     </ul>
                 </li>
                 <li>
                     Easy Sign-Up Process:
                     <ul>
-                        <li>Join our community with a quick and hassle-free sign-up process.</li>
+                        <li>Join our community with a quick and free sign-up process.</li>
                         <li>Create your personal account and start listing tasks right away.</li>
                     </ul>
                 </li>
                 <li>
-                    Mark Tasks as Complete:
+                    Mark Tasks as Repeatable:
                     <ul>
                         <li>Stay motivated by ticking off completed tasks as you go.</li>
                         <li>Watch your progress unfold in real-time, giving you a sense of accomplishment.</li>
                     </ul>
                 </li>
                 <li>
-                    Organize Tasks by Priority:
+                    Organize Tasks by Alphabetical order:
                     <ul>
-                        <li>Prioritize your tasks by marking them as high, medium, or low priority.</li>
-                        <li>Focus on what matters most, ensuring nothing important slips through the cracks.</li>
-                    </ul>
-                </li>
-                <li>
-                    Share and Collaborate:
-                    <ul>
-                        <li>Assign tasks to specific household members or roommates, ensuring everyone is on the same page.</li>
-                        <li>Foster a sense of teamwork and accountability in getting things done.</li>
-                    </ul>
-                </li>
-                <li>
-                    Set Reminders and Notifications:
-                    <ul>
-                        <li>Receive timely reminders about upcoming tasks and due dates, ensuring nothing is forgotten.</li>
-                        <li>Stay in control of your schedule and maintain a well-organized household.</li>
+                        <li>Alphabetical order is essential for quick lookup and cross-referencing.</li>
+                        <li>For individuals with cognitive or visual impairments, alphabetical order can be an important
+                            accessibility feature, as it provides a clear and predictable organization method.
+                        </li>
                     </ul>
                 </li>
                 <li>
@@ -85,19 +77,21 @@
 
             Start Simplifying Your Household Chores Today!
 
-            Sign up for Task Lister now and experience the convenience of managing your household tasks like never before. Say goodbye to forgotten chores and hello to a well-organized, efficient home life!
+            Sign up for Task Lister now and experience the convenience of managing your household tasks like never
+            before. Say goodbye to forgotten chores and hello to a well-organized, efficient home life!
             </p>
         </div>
-
-
     </div>
+
     <div class="align-bottom nav-list">
-        <h1>
-            Creators:
-            <ul class="title">
-                <li>Ty</li>
-                <li>Audrey</li>
-                <li>Kurt</li>
+        <h1 class="title user-box">
+           <p style="font-size: 2em">
+               Creators:
+           </p>
+            <ul class="title user-box">
+                <li class="btn"><a href="https://github.com/TyONeal">Ty Oneal</a></li>
+                <li class="btn"><a href="https://github.com/audreytan1127">Audrey Tan</a></li>
+                <li class="btn"><a href="https://github.com/Kurt-Suttin">Kurt Suttin</a></li>
             </ul>
         </h1>
     </div>
