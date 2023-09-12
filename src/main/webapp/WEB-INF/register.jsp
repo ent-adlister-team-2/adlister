@@ -14,19 +14,19 @@
     <form action="/register" method="post">
         <div class="user-box">
             <label for="username"></label>
-            <input id="username" name="username" class="form-control" type="text" placeholder="Enter a Username">
+            <input required id="username" name="username" class="form-control" type="text" placeholder="Enter a Username">
         </div>
         <div class="user-box">
             <label for="email"></label>
-            <input id="email" name="email" class="form-control" type="text" placeholder="Enter Your Email">
+            <input required id="email" name="email" class="form-control" type="text" placeholder="Enter Your Email">
         </div>
         <div class="user-box">
             <label for="password"></label>
-            <input id="password" name="password" class="form-control" type="password" placeholder="Enter in a Password">
+            <input required id="password" name="password" class="form-control" type="password" placeholder="Enter in a Password">
         </div>
         <div class="user-box">
             <label for="confirm_password"></label>
-            <input id="confirm_password" name="confirm_password" class="form-control" type="password"
+            <input required id="confirm_password" name="confirm_password" class="form-control" type="password"
                    placeholder=" Confirm Password">
         </div>
         <div class="column">
