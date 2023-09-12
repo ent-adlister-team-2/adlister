@@ -20,9 +20,7 @@ public class EditTaskServlet extends HttpServlet {
         }
         try {
             long taskId = Long.parseLong(request.getParameter("id"));
-            System.out.println(taskId);
             Task taskDetails = DaoFactory.getTasksDao().findById(taskId);
-            System.out.println(taskDetails.getName());
             request.setAttribute("task", taskDetails);
             request.getRequestDispatcher("/WEB-INF/tasks/edit.jsp").forward(request, response);
 
@@ -36,19 +34,18 @@ public class EditTaskServlet extends HttpServlet {
         String description = request.getParameter("description");
 //        String category = request.getParameter("category");
 //        int status = Integer.parseInt(request.getParameter("repeatable"));
-
+Boolean repeatable = request.getParameter("repeatable") != null;
         long taskId = Long.parseLong(request.getParameter("id"));
         try {
             Task task = DaoFactory.getTasksDao().findById(taskId);
             task.setName(name);
             task.setDescription(description);
-
+            task.setRepeatable(repeatable);
             DaoFactory.getTasksDao().updateName(task.getId(), task.getName());
             DaoFactory.getTasksDao().updateDescription(task.getId(), task.getDescription());
+            DaoFactory.getTasksDao().updateRepeatable(task.getId(), task.getRepeatable());
             response.sendRedirect("/tasks");
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
+        } catch (SQLException | IOException e) {
             throw new RuntimeException(e);
         }
     }

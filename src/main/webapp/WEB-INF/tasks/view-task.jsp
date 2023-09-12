@@ -11,21 +11,20 @@
 <jsp:include page="../partials/navbar.jsp"/>
 <div class="login-box">
     <div class="individual user-box">
-        <h1 class="title">Name: ${task.getName()}</h1>
-        <p class="homepage-text">Description:   ${task.getDescription()}</p>
-        <p class="homepage-text">Is Repeatable: ${task.getRepeatable()}</p>
+        <h1 class="title">Task Name: ${task.getName()}</h1>
+        <p class="homepage-text">Task Description: ${task.getDescription()}</p>
+        <p class="homepage-text">Repeatable Task: ${task.getRepeatable()}</p>
     </div>
-
-    <button>
-        <a href="/tasks/view/edit?id=${task.id}">Edit Task</a>
-        <span></span>
-    </button>
-    <button>
-        <a href="/tasks/view/delete?id=${task.id}">Delete Task</a>
-        <span></span>
-    </button>
-
-
+    <div class="btn-container">
+        <button>
+            <a href="/tasks/view/edit?id=${task.id}">Edit Task</a>
+            <span></span>
+        </button>
+        <button>
+            <a href="/tasks/view/delete?id=${task.id}">Delete Task</a>
+            <span></span>
+        </button>
+    </div>
 </div>
 </body>
 </html>

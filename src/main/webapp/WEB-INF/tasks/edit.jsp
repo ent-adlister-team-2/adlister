@@ -19,17 +19,17 @@
         <label for="description"></label>
         <input id="description" name="description" class="form-control" type="text" placeholder="Task Description">
       </div>
-      <div class="user-box">
-        <label for="category"></label>
-        <input id="category" name="category" class="form-control" type="text" placeholder="Task Category">
-      </div>
+<%--      <div class="user-box">--%>
+<%--        <label for="category"></label>--%>
+<%--        <input id="category" name="category" class="form-control" type="text" placeholder="Task Category">--%>
+<%--      </div>--%>
 <%--      <div class="user-box">--%>
 <%--        <label for="completion-status"></label>--%>
 <%--        <input id="completion-status" name="completion-status" class="form-control" type="checkbox" placeholder="Is this Task Complete?">--%>
 <%--      </div>--%>
-      <div class="user-box">
-        <label for="repeatable"></label>
-        <input id="repeatable" name="repeatable" class="form-control" type="checkbox" placeholder="Is this Task Repeatable?">
+      <div class="repeat-check">
+        <input id="repeatable" name="repeatable" class="form-control" type="checkbox">
+        <label for="repeatable">Repeatable task?</label>
       </div>
       <button type="submit" class="submit-btn">Save Changes</button>
     </form>
