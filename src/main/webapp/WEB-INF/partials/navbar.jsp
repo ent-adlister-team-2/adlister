@@ -26,7 +26,7 @@
                     <div class="row ">
                         <div class="column">
                             <ul class="navbar ul">
-                                <li class="navbar li nav-title"><a href="/profile">Profile</a></li>
+                                <li class="navbar li nav-title"><a href="/profile">Account</a></li>
                             </ul>
                         </div>
                         <div class="column">
@@ -43,7 +43,7 @@
                 </c:when>
                 <c:otherwise>
                     <li class="navbar li nav-title logout-notify"><a href="/logout">Logout</a></li>
-                    <li class="navbar li nav-title"><a href="/profile">Profile</a></li>
+                    <li class="navbar li nav-title"><a href="/profile">Account</a></li>
                 </c:otherwise>
             </c:choose>
         </ul>

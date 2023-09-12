@@ -23,8 +23,8 @@
             <c:forEach var="task" items="${tasks}">
             <div class="card">
                 <div class="content">
-                <h2 class="heading"> ${task.name} </h2>
-                <div class="para"> ${task.description} </div>
+                <h2 class="heading">Name: ${task.name} </h2>
+                <div class="para">Description: ${task.description} </div>
                 <div> Repeatable: ${task.repeatable} </div>
                 <div> Status: ${task.status} </div>
                 <button class="btn" type="submit">
