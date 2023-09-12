@@ -29,7 +29,7 @@
                     The email you selected is not available! Please choose a different email.
                 </div>
             </c:if>
-            <div>
+            <div class="column">
                 <button type="submit">
                     Submit
                     <span></span>

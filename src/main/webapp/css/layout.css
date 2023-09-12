@@ -210,3 +210,13 @@
 .text-center{
     text-align: center;
 }
+
+.margin-top-5{
+    margin-top: 5em;
+}
+.margin-top-2{
+    margin-top: 2em;
+}
+.margin-top-1{
+    margin-top: 1em;
+}

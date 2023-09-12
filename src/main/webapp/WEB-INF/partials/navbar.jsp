@@ -8,9 +8,13 @@
         <div class="mr-1">
             <img class="task-list-image" src="/images/task-list-image.jpeg" alt="image">
         </div>
-        <div class="navbar-task-lister">
-            <a class="column navbar nav-title " href="/tasks"> Manage Tasklister</a>
-        </div>
+        <c:choose>
+            <c:when test="${sessionScope.household != null}">
+                <div class="navbar-task-lister">
+                    <a class="column navbar nav-title" href="/tasks"> Manage Tasklister</a>
+                </div>
+            </c:when>
+        </c:choose>
     </div>
 
     <div class="column">

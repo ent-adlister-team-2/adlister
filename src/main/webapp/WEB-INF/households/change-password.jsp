@@ -22,7 +22,7 @@
         <label for="new-password"></label>
         <input id="new-password" name="new-password" class="form-control" type="password" placeholder=" New Password">
       </div>
-      <div>
+      <div class="column">
         <button type="submit">
           Submit
           <span></span>

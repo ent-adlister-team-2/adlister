@@ -18,7 +18,7 @@
                 <label for="name"></label>
                 <input id="name" name="name" class="form-control" type="text" placeholder="New Household Name">
             </div>
-            <div>
+            <div class="column">
                 <button type="submit">
                     Submit
                     <span></span>
