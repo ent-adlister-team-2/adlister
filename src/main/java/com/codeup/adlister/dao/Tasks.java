@@ -9,6 +9,8 @@ public interface Tasks {
     // get a list of all the ads
 
     List<Task> all(Long houseId);
+    List<Task> sortAllByName(Long houseId);
+    Task findById(long taskId) throws SQLException;
 
     // insert a new ad and return the new ad's id
     Long insert(Task task);
@@ -22,5 +24,4 @@ public interface Tasks {
 
     long updateCategory(long id, String category);
 
-    Task findById(long taskId) throws SQLException;
 }
