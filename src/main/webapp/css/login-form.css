@@ -4,6 +4,8 @@ https://uiverse.io/guilhermeyohan/warm-mule-6
 */
 a:link , a {
     text-decoration: none;
+    text-decoration-color: white;
+    color: white;
 }
 
 .login-box {

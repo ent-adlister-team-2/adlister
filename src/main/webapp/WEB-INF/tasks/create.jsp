@@ -6,6 +6,7 @@
     </jsp:include>
 </head>
 <body class="homepage-background">
+<jsp:include page="../partials/navbar.jsp"/>
 <div class="container login-box">
     <h1 class="title">Create a new Task</h1>
     <form action="${pageContext.request.contextPath}/tasks/create" method="post" class="column">
