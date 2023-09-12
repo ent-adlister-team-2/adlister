@@ -1,3 +1,8 @@
+/*| FORM FROM UIVERSE IO |*/
+/*
+https://uiverse.io/guilhermeyohan/warm-mule-6
+*/
+
 .login-box {
     position: absolute;
     top: 50%;
@@ -142,22 +147,22 @@
 }
 
 .login-box button:hover {
-    background: #03f40f;
+    background: #03f4f4;
     color: #fff;
     border-radius: 5px;
-    box-shadow: 0 0 5px #03f40f,
-    0 0 25px #03f40f,
-    0 0 50px #03f40f,
-    0 0 100px #03f40f;
+    box-shadow: 0 0 5px #03f4f4,
+    0 0 25px #03f4f4,
+    0 0 50px #03f4f4,
+    0 0 100px #03f4f4;
 }
 .login-box-login button:hover {
-    background: #03f40f;
+    background: #03f4f4;
     color: #fff;
     border-radius: 5px;
-    box-shadow: 0 0 5px #03f40f,
-    0 0 25px #03f40f,
-    0 0 50px #03f40f,
-    0 0 100px #03f40f;
+    box-shadow: 0 0 5px #03f4f4,
+    0 0 25px #03f4f4,
+    0 0 50px #03f4f4,
+    0 0 100px #03f4f4;
 }
 
 
@@ -185,7 +190,7 @@
     left: -100%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #03f40f);
+    background: linear-gradient(90deg, transparent, #03f4f4);
     animation: btn-anim1 2s linear infinite;
 }
 .login-box-login button span:nth-child(1) {
@@ -193,6 +198,6 @@
     left: -100%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #03f40f);
+    background: linear-gradient(90deg, transparent, #03f4f4);
     animation: btn-anim1 2s linear infinite;
 }

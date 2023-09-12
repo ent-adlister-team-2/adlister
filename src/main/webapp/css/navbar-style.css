@@ -6,10 +6,13 @@ This css folder is only for navbar styling
 .navbar {
     padding: 10px 0;
     color: #ffffff;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar-placement {
-    max-width: 100%;
+    /*max-width: 100%;*/
     display: flex;
     justify-content: space-between;
 }
@@ -60,29 +63,17 @@ This css folder is only for navbar styling
     list-style: none;
     padding: 0;
     display: flex;
-    justify-content: right; /* Aligns items to the right */
-}
-
-.navbar .left {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    /* Aligns items to the right */
-}
-
-.left {
-    justify-content: left;
 }
 
 .navbar li {
-    margin: 0 10px;
-    background-color: rgb(27, 227, 246);
-    border: 2px solid #000000;
-    border-radius: 15%;
+    margin: 0 30px;
+    /*background-color: rgb(27, 227, 246);*/
+    /*border: 2px solid #000000;*/
+    /*border-radius: 15%;*/
     color: white;
-    width: 60px;
+    width: 70px;
     height: 30px;
-    text-align: center;
+    /*text-align: center;*/
 }
 
 
@@ -96,7 +87,7 @@ This css folder is only for navbar styling
     0 0 100px #03f4f4;
 }
 .navbar-task-lister{
-
+margin-top: 1em;
 }
 .navbar-task-lister a:hover {
     background: #03f4f4;
@@ -110,4 +101,14 @@ This css folder is only for navbar styling
 
 .submit-text {
     font-size: 10px;
+}
+/*
+reset visted links colors to normal
+*/
+
+a:visited {
+    color: white;
+}
+.mr-1{
+    margin-right: 1em;
 }
