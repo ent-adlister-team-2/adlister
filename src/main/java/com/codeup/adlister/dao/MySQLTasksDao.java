@@ -127,11 +127,13 @@ public class MySQLTasksDao implements Tasks {
         }
     }
 
+
+
     @Override
-    public long updateRepeatable(long id, int repeatable) {
+    public long updateRepeatable(long id, Boolean repeatable) {
         try {
             PreparedStatement stmt = connection.prepareStatement("UPDATE tasklister_db.tasks SET repeatable = ? WHERE id = ?", Statement.RETURN_GENERATED_KEYS);
-            stmt.setInt(1, repeatable);
+            stmt.setInt(1, repeatable ? 1 : 0);
             stmt.setLong(2, id);
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();

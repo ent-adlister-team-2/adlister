@@ -18,7 +18,8 @@ public interface Tasks {
     long updateName(long id, String name);
     long updateDescription(long id, String description);
     long updateStatus(long id, int status);
-    long updateRepeatable(long id, int repeatable);
+    long updateRepeatable(long id, Boolean repeatable);
+
     long updateCategory(long id, String category);
 
     Task findById(long taskId) throws SQLException;

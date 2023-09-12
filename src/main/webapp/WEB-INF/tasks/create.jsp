@@ -20,12 +20,9 @@
         </div>
         <div class="column margin-top-2">
             <label class="title">
-                Is this task repeatable?
-            </label>
-            <div class="margin-top-1">
                 <input type="checkbox" id="repeatable" name="repeatable" value="repeatable"
-                       checked="checked"/>
-            </div>
+                       checked="checked"/> Is this task repeatable?
+            </label>
         </div>
         <div class="column">
             <button type="submit">
