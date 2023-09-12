@@ -27,16 +27,12 @@ public class ChangeNameServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
         Household loggedInHousehold = (Household) request.getSession().getAttribute("household");
 
-        String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String confirmPassword = request.getParameter("confirm-password");
         String name = request.getParameter("name");
 
-        Boolean validUsername = loggedInHousehold.getUsername().equals(username);
         Boolean validPassword = BCrypt.checkpw(password, loggedInHousehold.getPassword());
-        Boolean validConfirm = BCrypt.checkpw(confirmPassword, loggedInHousehold.getPassword());
 
-        if(validUsername && validPassword && validConfirm) {
+        if(validPassword) {
             loggedInHousehold.setName(name);
             try {
                 DaoFactory.getHouseholdsDao().updateName(loggedInHousehold.getId(), loggedInHousehold.getName());

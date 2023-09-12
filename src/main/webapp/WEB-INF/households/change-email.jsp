@@ -13,17 +13,8 @@
         <h1 class="title">Change Email</h1>
         <form id="change-email-form" action="${pageContext.request.contextPath}/profile/change-email" method="POST">
             <div class="user-box">
-                <label for="username"></label>
-                <input id="username" name="username" class="form-control" type="text" placeholder="Username">
-            </div>
-            <div class="user-box">
                 <label for="password"></label>
                 <input id="password" name="password" class="form-control" type="password" placeholder="Password">
-            </div>
-            <div class="user-box">
-                <label for="confirm-password"></label>
-                <input id="confirm-password" name="confirm-password" class="form-control" type="password"
-                       placeholder="Confirm Your Password">
             </div>
             <div class="user-box">
                 <label for="old-email"></label>
@@ -38,7 +29,7 @@
                     The email you selected is not available! Please choose a different email.
                 </div>
             </c:if>
-            <div>
+            <div class="column">
                 <button type="submit">
                     Submit
                     <span></span>

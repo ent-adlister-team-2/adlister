@@ -26,7 +26,7 @@
                 <label for="user-confirm"></label>
                 <input id="user-confirm" name="user-confirm" class="form-control" type="text"  placeholder="Enter user to Delete :${household.username}">
             </div>
-            <div>
+            <div class="column">
                 <button type="submit">
                     Submit
                     <span></span>

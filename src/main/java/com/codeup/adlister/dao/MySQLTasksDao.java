@@ -61,7 +61,7 @@ public class MySQLTasksDao implements Tasks {
         try {
             PreparedStatement stmt = connection.prepareStatement("DELETE FROM tasklister_db.tasks WHERE id = ?");
             stmt.setLong(1, id);
-            stmt.executeQuery();
+            stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException("Error deleting a task.", e);
         }
