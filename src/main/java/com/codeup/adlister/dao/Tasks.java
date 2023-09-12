@@ -9,6 +9,7 @@ public interface Tasks {
     // get a list of all the ads
 
     List<Task> all(Long houseId);
+    List<Task> allCompleted(Long houseId);
     List<Task> sortAllByName(Long houseId);
     Task findById(long taskId) throws SQLException;
 
