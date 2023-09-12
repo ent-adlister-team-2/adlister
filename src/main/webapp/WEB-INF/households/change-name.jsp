@@ -9,7 +9,7 @@
     <jsp:include page="../partials/navbar.jsp"/>
     <div class="container login-box">
         <h1 class="title">Edit Task</h1>
-        <form action="${pageContext.request.contextPath}/profile/change-name" method="POST">
+        <form id="change-household-form" action="${pageContext.request.contextPath}/profile/change-name" method="POST">
             <div class="user-box">
                 <label for="password"></label>
                 <input id="password" name="password" class="form-control" type="password" placeholder="Password">
@@ -28,6 +28,6 @@
     </div>
 
 </div>
-
+<script src="../../js/name_validation.js"></script>
 </body>
 </html>

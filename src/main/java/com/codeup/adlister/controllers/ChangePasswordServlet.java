@@ -27,15 +27,13 @@ public class ChangePasswordServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Household loggedInHousehold = (Household) request.getSession().getAttribute("household");
 
-        String username = request.getParameter("username");
         String oldPassword = request.getParameter("old-password");
         String newPassword = request.getParameter("new-password");
         String hashedNewPassword = BCrypt.hashpw(newPassword, BCrypt.gensalt());
 
-        boolean validUsername = loggedInHousehold.getUsername().equals(username);
         boolean validPassword = BCrypt.checkpw(oldPassword, loggedInHousehold.getPassword());
 
-        if(validUsername && validPassword) {
+        if(validPassword) {
             loggedInHousehold.setPassword(hashedNewPassword);
             try {
                 DaoFactory.getHouseholdsDao().updatePassword(loggedInHousehold.getId(), loggedInHousehold.getPassword());

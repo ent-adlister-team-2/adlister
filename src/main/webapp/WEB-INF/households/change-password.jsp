@@ -9,11 +9,7 @@
   <jsp:include page="../partials/navbar.jsp"/>
   <div class="container login-box">
     <h1 class="title">Change Password</h1>
-    <form action="${pageContext.request.contextPath}/profile/change-password" method="POST">
-      <div class="user-box">
-        <label for="username"></label>
-        <input id="username" name="username" class="form-control" type="text" placeholder="Username">
-      </div>
+    <form id="change-household-form" action="${pageContext.request.contextPath}/profile/change-password" method="POST">
       <div class="user-box">
         <label for="old-password"></label>
         <input id="old-password" name="old-password" class="form-control" type="password" placeholder="Old Password">
@@ -32,6 +28,6 @@
   </div>
 
 </div>
-
+<script src="../../js/password_validation.js"></script>
 </body>
 </html>
