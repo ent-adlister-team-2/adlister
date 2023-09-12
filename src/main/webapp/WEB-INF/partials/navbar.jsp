@@ -38,10 +38,11 @@
                     </div>
                 </c:when>
                 <c:otherwise>
-                    <li class="navbar li nav-title"><a href="/logout">Logout</a></li>
+                    <li class="navbar li nav-title logout-notify"><a href="/logout">Logout</a></li>
                     <li class="navbar li nav-title"><a href="/profile">Profile</a></li>
                 </c:otherwise>
             </c:choose>
         </ul>
     </div>
 </div>
+<jsp:include page="/WEB-INF/partials/footer.jsp"></jsp:include>
