@@ -2,29 +2,38 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Create a new Ad" />
+        <jsp:param name="title" value="Create a new Ad"/>
     </jsp:include>
 </head>
-<body>
-    <div class="container">
-        <h1>Create a new Ad</h1>
-        <form action="${pageContext.request.contextPath}/tasks/create" method="post">
-            <div class="form-group">
-                <label for="name">Title</label>
-                <input id="name" name="name" class="form-control" type="text">
-            </div>
-            <div class="form-group">
-                <label for="description">Description</label>
-                <textarea id="description" name="description" class="form-control" type="text"></textarea>
-            </div>
-
-            <label>
-                <input type="checkbox" id="repeatable" name="repeatable" value="repeatable"
-                        checked="checked"/>
+<body class="homepage-background">
+<div class="container login-box">
+    <h1 class="title">Create a new Task</h1>
+    <form action="${pageContext.request.contextPath}/tasks/create" method="post" class="column">
+        <div class="user-box">
+            <label for="name"></label>
+            <input id="name" name="name" class="form-control" type="text" placeholder="Title">
+        </div>
+        <div class="user-box">
+            <label for="description"></label>
+            <textarea id="description" name="description" class="form-control" type="text"
+                      placeholder="Description"></textarea>
+        </div>
+        <div class="column margin-top-2">
+            <label class="title">
                 Is this task repeatable?
             </label>
-            <input type="submit" class="btn btn-block btn-primary">
-        </form>
-    </div>
+            <div class="margin-top-1">
+                <input type="checkbox" id="repeatable" name="repeatable" value="repeatable"
+                       checked="checked"/>
+            </div>
+        </div>
+        <div class="column">
+            <button type="submit">
+                Submit
+                <span></span>
+            </button>
+        </div>
+    </form>
+</div>
 </body>
 </html>
