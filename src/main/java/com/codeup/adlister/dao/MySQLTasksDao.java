@@ -37,6 +37,18 @@ public class MySQLTasksDao implements Tasks {
         }
     }
     @Override
+    public List<Task> allCompleted(Long houseId) {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM tasklister_db.tasks WHERE household_id = ? AND status = 1");
+            stmt.setLong(1, houseId);
+            ResultSet rs = stmt.executeQuery();
+            return createTasksFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+    @Override
     public List<Task> sortAllByName(Long houseId) {
         PreparedStatement stmt = null;
         try {
