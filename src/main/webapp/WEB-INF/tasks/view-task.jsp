@@ -11,9 +11,9 @@
 <jsp:include page="../partials/navbar.jsp"/>
 <div class="login-box">
     <div class="individual user-box">
-        <h1 class="title">${task.getName()}</h1>
-        <p class="homepage-text">${task.getDescription()}</p>
-        <p class="homepage-text">${task.getRepeatable()}</p>
+        <h1 class="title">Name: ${task.getName()}</h1>
+        <p class="homepage-text">Description:   ${task.getDescription()}</p>
+        <p class="homepage-text">Is Repeatable: ${task.getRepeatable()}</p>
     </div>
 
     <button>
