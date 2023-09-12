@@ -38,9 +38,7 @@ public class ChangeEmailServlet extends HttpServlet {
         Boolean validPassword = BCrypt.checkpw(password, loggedInHousehold.getPassword());
         Boolean validEmail = loggedInHousehold.getEmail().equals(oldEmail);
 
-        Boolean emailNotAvailable = DaoFactory.getHouseholdsDao().findByEmail(newEmail).getEmail().equals(newEmail);
-
-        if(validPassword && validEmail && !emailNotAvailable) {
+        if(validPassword && validEmail) {
             loggedInHousehold.setEmail(newEmail);
             try{
             DaoFactory.getHouseholdsDao().updateEmail(loggedInHousehold.getId(), loggedInHousehold.getEmail());
@@ -48,7 +46,7 @@ public class ChangeEmailServlet extends HttpServlet {
             } catch (SQLException e) {
                 throw new RuntimeException("Unable to update Email.", e);
             }
-        } else if (validPassword && emailNotAvailable) {
+        } else if (validPassword) {
             request.setAttribute("emailNotAvailable", true);
             request.getRequestDispatcher("/WEB-INF/households/change-email.jsp").forward(request, response);
         }
