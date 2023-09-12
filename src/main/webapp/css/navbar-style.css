@@ -25,11 +25,13 @@ This css folder is only for navbar styling
 .nav-title {
     font-size: 1.6rem;
     color: white;
+    text-decoration: none;
 }
 
 .title {
     text-decoration-color: white;
     color: white;
+    text-decoration: none;
 }
 
 /* Style the navigation list */

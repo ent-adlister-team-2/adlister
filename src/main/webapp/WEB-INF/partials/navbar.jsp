@@ -11,7 +11,7 @@
         <c:choose>
             <c:when test="${sessionScope.household != null}">
                 <div class="navbar-task-lister">
-                    <a class="column navbar nav-title " href="/tasks"> Manage Tasklister</a>
+                    <a class="column navbar nav-title" href="/tasks"> Manage Tasklister</a>
                 </div>
             </c:when>
         </c:choose>

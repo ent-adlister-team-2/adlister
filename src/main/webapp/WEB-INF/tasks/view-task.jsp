@@ -7,17 +7,24 @@
     </jsp:include>
     <title>Viewing Task Details</title>
 </head>
-<body class="background">
+<body class="homepage-background">
 <jsp:include page="../partials/navbar.jsp"/>
-<div class="container background">
-    <div class="individual">
-        <h1>${task.getName()}</h1>
-        <p>${task.getDescription()}</p>
-        <p>${task.getRepeatable()}</p>
+<div class="login-box">
+    <div class="individual user-box">
+        <h1 class="title">${task.getName()}</h1>
+        <p class="homepage-text">${task.getDescription()}</p>
+        <p class="homepage-text">${task.getRepeatable()}</p>
     </div>
 
-    <a href="/tasks/view/edit?id=${task.id}">Edit Task</a>
-    <a href="/tasks/view/delete?id=${task.id}">Delete Task</a>
+    <button>
+        <a href="/tasks/view/edit?id=${task.id}">Edit Task</a>
+        <span></span>
+    </button>
+    <button>
+        <a href="/tasks/view/delete?id=${task.id}">Delete Task</a>
+        <span></span>
+    </button>
+
 
 </div>
 </body>

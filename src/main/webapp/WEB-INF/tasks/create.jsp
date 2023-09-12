@@ -15,8 +15,7 @@
         </div>
         <div class="user-box">
             <label for="description"></label>
-            <textarea id="description" name="description" class="form-control" type="text"
-                      placeholder="Description"></textarea>
+            <input id="description" name="description" class="form-control" type="text" placeholder="Description">
         </div>
         <div class="column margin-top-2">
             <label class="title">
