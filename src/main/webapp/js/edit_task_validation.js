@@ -7,16 +7,12 @@
         }
         }
 
-        let form = document.getElementById("edit-task-form");
-        form.addEventListener('submit', (e)=>{
+        let form = document.getElementById("editTask");
+        form.addEventListener('submit', function(e){
             console.log("inside event listener");
             e.preventDefault();
             validate();
-            if(validate()){
-                form.submit();
-            } else {
-                e.preventDefault();
-            }
+            form.submit();
          })
 
 })();
