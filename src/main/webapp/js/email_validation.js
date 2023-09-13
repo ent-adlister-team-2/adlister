@@ -1,5 +1,4 @@
 "use strict";
-
 (function () {
     function validatePassword() {
         let password = document.getElementById('password').value;
@@ -33,11 +32,22 @@
                 return true;
         }
     }
-    let form = document.getElementById('change-household-form')
+    function stickyForm() {
+        let oldEmail = document.getElementById('old-email');
+        let newEmail = document.getElementById('new-email');
+        sessionStorage.setItem('oldEmail', oldEmail.value);
+        sessionStorage.setItem('newEmail', newEmail.value);
+    }
+    let form = document.getElementById('change-email-form')
     form.addEventListener('submit', function (e) {
         e.preventDefault();
         validatePassword();
         validateEmail();
+        stickyForm();
         form.submit();
     });
+    let oldField = document.getElementById('old-email');
+    let newField = document.getElementById('new-email');
+    oldField.value = sessionStorage.getItem('oldEmail');
+    newField.value = sessionStorage.getItem('newEmail');
 })();

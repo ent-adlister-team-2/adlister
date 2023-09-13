@@ -12,7 +12,7 @@
         <div class="row">
             <div class="column">
                 <div class="login-box">
-                    <form action="/login" method="POST">
+                    <form action="${pageContext.request.contextPath}/login" method="POST">
                         <h1 class="title">Please Log In</h1>
 
                         <div class="user-box">

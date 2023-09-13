@@ -48,6 +48,14 @@ public class ChangeEmailServlet extends HttpServlet {
                return;
             }
         }
+        if(!validEmail) {
+            request.setAttribute("invalidEmail", true);
+            request.getRequestDispatcher("/WEB-INF/households/change-email.jsp").forward(request, response);
+        }
+        if(!validPassword) {
+            request.setAttribute("invalidPassword", true);
+            request.getRequestDispatcher("/WEB-INF/households/change-email.jsp").forward(request, response);
+        }
         if(validPassword && validEmail) {
             loggedInHousehold.setEmail(newEmail);
             try{
