@@ -15,17 +15,17 @@
         <c:if test="${not empty usernameNotAvailable}">
             <h2 style="color: white">Username not available.</h2>
         </c:if>
-        <form id="change-household-form" action="${pageContext.request.contextPath}/profile/change-username" method="POST">
+        <form id="changeUsernameForm" action="${pageContext.request.contextPath}/profile/change-username" method="POST">
             <c:if test="${not empty invalidUsername}">
                 <h2 style="color: white">Your username was incorrect!</h2>
             </c:if>
             <div class="user-box">
-                <label for="old-username"></label>
-                <input id="old-username" name="old-username" class="form-control" type="text" placeholder="Old Username">
+                <label for="oldUsername"></label>
+                <input id="oldUsername" name="old-username" class="form-control" type="text" placeholder="Old Username">
             </div>
             <div class="user-box">
-                <label for="new-username"></label>
-                <input id="new-username" name="new-username" class="form-control" type="text" placeholder="New Username">
+                <label for="newUsername"></label>
+                <input id="newUsername" name="new-username" class="form-control" type="text" placeholder="New Username">
             </div>
             <c:if test="${not empty invalidPassword}">
                 <h2 style="color: white">Your password was incorrect!</h2>

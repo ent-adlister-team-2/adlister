@@ -33,12 +33,12 @@
         }
     }
     function stickyForm() {
-        let oldEmail = document.getElementById('old-email');
-        let newEmail = document.getElementById('new-email');
+        let oldEmail = document.getElementById('oldEmail');
+        let newEmail = document.getElementById('newEmail');
         sessionStorage.setItem('oldEmail', oldEmail.value);
         sessionStorage.setItem('newEmail', newEmail.value);
     }
-    let form = document.getElementById('change-email-form')
+    let form = document.getElementById('changeEmailForm')
     form.addEventListener('submit', function (e) {
         e.preventDefault();
         validatePassword();
@@ -46,8 +46,8 @@
         stickyForm();
         form.submit();
     });
-    let oldField = document.getElementById('old-email');
-    let newField = document.getElementById('new-email');
+    let oldField = document.getElementById('oldEmail');
+    let newField = document.getElementById('newEmail');
     oldField.value = sessionStorage.getItem('oldEmail');
     newField.value = sessionStorage.getItem('newEmail');
 })();

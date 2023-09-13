@@ -2,8 +2,8 @@
 
 (function () {
     function validatePassword() {
-        let oldPassword = document.getElementById('old-password').value;
-        let newPassword = document.getElementById('new-password').value;
+        let oldPassword = document.getElementById('oldPassword').value;
+        let newPassword = document.getElementById('newPassword').value;
         switch (true) {
             case oldPassword === newPassword:
                 alert("Passwords cannot be the same!")
@@ -18,7 +18,7 @@
                 return true;
         }
     }
-    let form = document.getElementById('change-household-form');
+    let form = document.getElementById('changePasswordForm');
     form.addEventListener('submit', function (e) {
         e.preventDefault();
         console.log(validatePassword());;

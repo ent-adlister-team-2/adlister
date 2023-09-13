@@ -16,7 +16,7 @@
         <c:if test="${not empty emailNotAvailable}">
             <h2 style="color: white">Email not available.</h2>
         </c:if>
-        <form id="change-email-form" action="${pageContext.request.contextPath}/profile/change-email" method="POST">
+        <form id="changeEmailForm" action="${pageContext.request.contextPath}/profile/change-email" method="POST">
             <c:if test="${not empty invalidPassword}">
                 <h2 style="color: white">Your password was incorrect!</h2>
             </c:if>
@@ -28,12 +28,12 @@
                 <h2 style="color: white">Your email was incorrect!</h2>
             </c:if>
             <div class="user-box">
-                <label for="old-email"></label>
-                <input id="old-email" name="old-email" class="form-control" type="text" placeholder="Old Email">
+                <label for="oldEmail"></label>
+                <input id="oldEmail" name="old-email" class="form-control" type="text" placeholder="Old Email">
             </div>
             <div class="user-box">
-                <label for="new-email"></label>
-                <input id="new-email" name="new-email" class="form-control" type="text" placeholder="New Email">
+                <label for="newEmail"></label>
+                <input id="newEmail" name="new-email" class="form-control" type="text" placeholder="New Email">
             </div>
             <div class="column">
                 <button type="submit">
