@@ -16,22 +16,20 @@ public class CreateTaskServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getSession().getAttribute("household") == null) {
             response.sendRedirect("/login");
-            // add a return statement to exit out of the entire method.
             return;
         }
-
         request.getRequestDispatcher("/WEB-INF/tasks/create.jsp").forward(request, response);
-
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Household loggedInHousehold = (Household) request.getSession().getAttribute("household");
         Boolean repeatableTask = request.getParameter("repeatable") != null;
-        System.out.println(repeatableTask);
+        Boolean taskStatus = request.getParameter("status") != null;
         Task task = new Task(
                 request.getParameter("name"),
                 request.getParameter("description"),
                 repeatableTask,
+                taskStatus,
                 loggedInHousehold.getId()
         );
         DaoFactory.getTasksDao().insert(task);
