@@ -3,13 +3,12 @@
     function validateUsername() {
         let oldUsername = document.getElementById('old-username').value;
         let newUsername = document.getElementById('new-username').value;
-
         switch (true) {
             case oldUsername === "":
                 console.log("username is blank")
                 alert("You must enter your username")
                 return false;
-            case newUsername = "":
+            case newUsername ==="":
                 alert("You must enter a new username")
                 return false;
             case oldUsername === newUsername:
