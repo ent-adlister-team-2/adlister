@@ -40,6 +40,7 @@ public class DeleteHouseholdServlet extends HttpServlet {
         if (validUsername && validPassword && validPasswordConfirm && validUserConfirm) {
             try {
                 request.getSession().invalidate();
+                DaoFactory.getTasksDao().deleteAllTasks(loggedInHousehold.getId());
                 DaoFactory.getHouseholdsDao().deleteHousehold(loggedInHousehold.getId());
                 response.sendRedirect("/login");
             } catch (SQLException e) {

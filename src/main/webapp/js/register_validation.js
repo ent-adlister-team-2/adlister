@@ -38,6 +38,9 @@
     form.addEventListener('submit', function (e) {
         e.preventDefault();
         validate();
+        if(!validate()) {
+            e.preventDefault();
+        }
         stickyForm();
         form.submit();
     });
