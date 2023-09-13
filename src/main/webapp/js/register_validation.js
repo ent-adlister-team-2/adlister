@@ -4,6 +4,7 @@
       let username = document.getElementById('username').value;
       let email = document.getElementById('email').value;
       let password = document.getElementById('password').value;
+      let confirmPassword = document.getElementById('confirm-password');
       switch (true) {
           case username.length <= 4:
               alert("Username must be more than four characters!")
@@ -20,6 +21,11 @@
           case password.length >=20:
               alert("Password cannot be more than twenty characters!")
               return false;
+          case password !== confirmPassword:
+              alert("Passwords must match!")
+              return false;
+          default:
+              return true;
       }
     }
     function stickyForm() {

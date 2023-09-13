@@ -28,8 +28,9 @@ public class RegisterServlet extends HttpServlet {
             || email.isEmpty()
             || password.isEmpty()
             || (! password.equals(passwordConfirmation));
+        boolean passwordTooShort = password.length() <= 4;
 
-        if (inputHasErrors) {
+        if (inputHasErrors || passwordTooShort) {
             response.sendRedirect("/register");
             return;
         }
