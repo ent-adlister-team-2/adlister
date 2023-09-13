@@ -30,10 +30,10 @@
 
                     <p>
                         Task Lister is your go-to platform for effortlessly managing household chores. Designed with
-                        efficiency
+                        efficiency in mind.
                     </p>
                     <p>
-                        in mind, Task Lister empowers you to keep track of your to-do list and conquer your tasks with
+                        Task Lister empowers you to keep track of your to-do list and conquer your tasks with
                         ease.
                     </p>
 
@@ -45,19 +45,19 @@
                     </h2>
                     <ul>
                         <li>
-                            Create and Customize Tasks:
+                            Create and Customize Tasks
                         </li>
                         <li>
-                            Easy Sign-Up Process:
+                            Easy Sign-Up Process
                         </li>
                         <li>
-                            Mark Tasks as Repeatable:
+                            Mark Tasks as Repeatable
                         </li>
                         <li>
-                            Organize Tasks by Alphabetical order:
+                            Organize Tasks by Alphabetical order
                         </li>
                         <li>
-                            User-Friendly Interface:
+                            User-Friendly Interface
                         </li>
                     </ul>
                 </div>
