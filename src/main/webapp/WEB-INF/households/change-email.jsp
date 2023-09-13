@@ -8,18 +8,25 @@
 <body class="homepage-background">
 <div class="page-wrapper">
     <c:set var="emailNotAvailable" value="${requestScope.emailNotAvailable}"/>
+    <c:set var="invalidEmail" value="${requestScope.invalidEmail}"/>
+    <c:set var="invalidPassword" value="${requestScope.invalidPassword}"/>
     <jsp:include page="../partials/navbar.jsp"/>
     <div class="container login-box">
         <h1 class="title">Change Email</h1>
-
         <c:if test="${not empty emailNotAvailable}">
             <h2 style="color: white">Email not available.</h2>
         </c:if>
         <form id="change-email-form" action="${pageContext.request.contextPath}/profile/change-email" method="POST">
+            <c:if test="${not empty invalidPassword}">
+                <h2 style="color: white">Your password was incorrect!</h2>
+            </c:if>
             <div class="user-box">
                 <label for="password"></label>
                 <input id="password" name="password" class="form-control" type="password" placeholder="Password">
             </div>
+            <c:if test="${not empty invalidEmail}">
+                <h2 style="color: white">Your email was incorrect!</h2>
+            </c:if>
             <div class="user-box">
                 <label for="old-email"></label>
                 <input id="old-email" name="old-email" class="form-control" type="text" placeholder="Old Email">
@@ -28,11 +35,6 @@
                 <label for="new-email"></label>
                 <input id="new-email" name="new-email" class="form-control" type="text" placeholder="New Email">
             </div>
-            <c:if test="${requestScope.emailNotAvailable == true && requestScope.emailNotAvailable != null}">
-                <div class="alert alert-danger">
-                    The email you selected is not available! Please choose a different email.
-                </div>
-            </c:if>
             <div class="column">
                 <button type="submit">
                     Submit
@@ -41,9 +43,7 @@
             </div>
         </form>
     </div>
-
 </div>
-
 <script src="../../js/email_validation.js"></script>
 </body>
 </html>

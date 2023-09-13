@@ -17,7 +17,6 @@ public class RegisterServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
     }
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String username = request.getParameter("username");
         String email = request.getParameter("email");
@@ -58,7 +57,6 @@ public class RegisterServlet extends HttpServlet {
                 return;
             }
         }
-
         DaoFactory.getHouseholdsDao().insert(household);
         response.sendRedirect("/login");
     }

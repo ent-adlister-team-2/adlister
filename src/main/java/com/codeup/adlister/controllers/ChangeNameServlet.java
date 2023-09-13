@@ -24,7 +24,7 @@ public class ChangeNameServlet extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/households/change-name.jsp").forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         Household loggedInHousehold = (Household) request.getSession().getAttribute("household");
 
         String password = request.getParameter("password");
@@ -42,6 +42,9 @@ public class ChangeNameServlet extends HttpServlet {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+        } else {
+            request.setAttribute("wrongPassword", true);
+            request.getRequestDispatcher("/WEB-INF/households/change-name.jsp").forward(request, response);
         }
     }
 }

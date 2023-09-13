@@ -27,8 +27,6 @@
         let email = document.getElementById('email');
         sessionStorage.setItem('username', username.value);
         sessionStorage.setItem('email', email.value);
-        username.value = sessionStorage.getItem('username');
-        email.value = sessionStorage.getItem('email');
     }
     let form = document.getElementById('register-form');
     form.addEventListener('submit', function (e) {

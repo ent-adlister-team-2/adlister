@@ -11,10 +11,17 @@
                 return true;
         }
     }
-    let form = document.getElementById('change-household-form')
+    function stickyForm() {
+        let name = document.getElementById('name');
+        sessionStorage.setItem('name', name.value);
+    }
+    let form = document.getElementById('change-name-form')
     form.addEventListener('submit', function (e) {
         e.preventDefault();
         validatePassword();
+        stickyForm();
         form.submit();
     });
+    let nameField = document.getElementById('name');
+    nameField.value = sessionStorage.getItem('name');
 })();
