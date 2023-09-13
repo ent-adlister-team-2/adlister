@@ -8,6 +8,8 @@
 </head>
 <body class="homepage-background">
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+<c:set var="complete" value="${requestScope.complete}"/>
+<c:set var="incomplete" value="${requestScope.incomplete}"/>
 <div class="page-wrapper">
     <div class="container">
         <h1 class="household-name">${household.name}</h1>
@@ -37,15 +39,10 @@
                         <div class="para">Description: ${task.description} </div>
                         <div> Repeatable: ${task.repeatable} </div>
                         <div> Status: ${task.status} </div>
-
-                            <button class="task-btn">
-                                <span class="task-btn-text-one">Complete Task</span>
-                                <span class="task-btn-text-two">Completed!</span>
-                            </button>
-                            <button class="btn margin-top-1" type="submit">
-                                <a href="${pageContext.request.contextPath}/tasks/view?id=${task.id}">View Task
-                                    Details</a>
-                            </button>
+                        <button class="btn margin-top-1" type="submit">
+                            <a href="${pageContext.request.contextPath}/tasks/view?id=${task.id}">View Task
+                                Details</a>
+                        </button>
 
                     </div>
                 </div>
@@ -53,5 +50,6 @@
         </div>
     </div>
 </div>
+
 </body>
 </html>

@@ -5,6 +5,8 @@
     <title>Title</title>
 </head>
 <body>
+<c:set var="complete" value="${requestScope.complete}"/>
+<c:set var="incomplete" value="${requestScope.incomplete}"/>
 <div class="container">
     <div class="tasks row d-flex">
         <c:forEach var="task" items="${tasks}">
@@ -14,10 +16,6 @@
                     <div class="para">Description: ${task.description} </div>
                     <div> Repeatable: ${task.repeatable} </div>
                     <div> Status: ${task.status} </div>
-                    <button class="task-btn">
-                        <span class="task-btn-text-one">Nice!</span>
-                        <span class="task-btn-text-two">Add Back To List!</span>
-                    </button>
                     <button class="btn" type="submit">
                         <a href="${pageContext.request.contextPath}/tasks/view?id=${task.id}">View Task Details</a>
                     </button>
@@ -26,5 +24,6 @@
         </c:forEach>
     </div>
 </div>
+
 </body>
 </html>

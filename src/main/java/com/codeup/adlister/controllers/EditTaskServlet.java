@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet ("/tasks/view/edit")
+@WebServlet("/tasks/view/edit")
 public class EditTaskServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         if (request.getSession().getAttribute("household") == null) {
@@ -24,17 +24,19 @@ public class EditTaskServlet extends HttpServlet {
             request.setAttribute("task", taskDetails);
             request.getRequestDispatcher("/WEB-INF/tasks/edit.jsp").forward(request, response);
 
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             throw new RuntimeException("Error editing your task.", e);
         }
 
     }
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String name = request.getParameter("name");
+        if(name.length() >= 100) {
+        response.sendRedirect("/tasks/view/edit");
+        }
         String description = request.getParameter("description");
-//        String category = request.getParameter("category");
-//        int status = Integer.parseInt(request.getParameter("repeatable"));
-Boolean repeatable = request.getParameter("repeatable") != null;
+        Boolean repeatable = request.getParameter("repeatable") != null;
         long taskId = Long.parseLong(request.getParameter("id"));
         try {
             Task task = DaoFactory.getTasksDao().findById(taskId);
