@@ -24,7 +24,7 @@ public class ChangePasswordServlet extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/households/change-password.jsp").forward(request, response);
     }
 
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         Household loggedInHousehold = (Household) request.getSession().getAttribute("household");
 
         String oldPassword = request.getParameter("old-password");
@@ -32,7 +32,10 @@ public class ChangePasswordServlet extends HttpServlet {
         String hashedNewPassword = BCrypt.hashpw(newPassword, BCrypt.gensalt());
 
         boolean validPassword = BCrypt.checkpw(oldPassword, loggedInHousehold.getPassword());
-
+        if(!validPassword) {
+            request.setAttribute("invalidPassword", true);
+            request.getRequestDispatcher("/WEB-INF/households/change-password.jsp").forward(request, response);
+        }
         if(validPassword) {
             loggedInHousehold.setPassword(hashedNewPassword);
             try {
