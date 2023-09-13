@@ -16,13 +16,13 @@
         <p class="homepage-text">Repeatable Task: ${task.getRepeatable()}</p>
     </div>
     <div class="btn-container">
-        <button>
-            <a href="/tasks/view/edit?id=${task.id}">Edit Task</a>
-            <span></span>
+        <button class="title">
+            <a href="/tasks/view/edit?id=${task.id}">Edit Task <span></span></a>
+
         </button>
-        <button>
-            <a href="/tasks/view/delete?id=${task.id}">Delete Task</a>
-            <span></span>
+        <button class="title">
+            <a href="/tasks/view/delete?id=${task.id}">Delete Task <span></span></a>
+
         </button>
     </div>
 </div>

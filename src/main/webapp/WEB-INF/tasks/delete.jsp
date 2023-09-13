@@ -10,11 +10,11 @@
 <jsp:include page="../partials/navbar.jsp"/>
 <div class="container login-box">
 
-    <form method="POST" action="/tasks/view/delete?id=${task.id}" class="column ">
+    <form method="POST" action="${pageContext.request.contextPath}/tasks/view/delete?id=${task.id}">
         <div class="user-box">
-            <h1 class="title">${task.getName()}</h1>
-            <p class="homepage-text">${task.getDescription()}</p>
-            <p class="homepage-text">${task.getRepeatable()}</p>
+            <h1 class="title">Task: ${task.getName()}</h1>
+            <p class="homepage-text">Description: ${task.getDescription()}</p>
+            <p class="homepage-text">Repeatable: ${task.getRepeatable()}</p>
         </div>
         <div class="column">
             <button type="submit" class="title">
