@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.swing.*;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 @WebServlet ("/profile/change-email")
 public class ChangeEmailServlet extends HttpServlet {
@@ -38,6 +39,23 @@ public class ChangeEmailServlet extends HttpServlet {
         Boolean validPassword = BCrypt.checkpw(password, loggedInHousehold.getPassword());
         Boolean validEmail = loggedInHousehold.getEmail().equals(oldEmail);
 
+        List<Household> households = DaoFactory.getHouseholdsDao().all();
+
+        for(Household household : households) {
+           if (newEmail.equals(household.getEmail())) {
+               request.setAttribute("emailNotAvailable", true);
+               request.getRequestDispatcher("/WEB-INF/households/change-email.jsp").forward(request, response);
+               return;
+            }
+        }
+        if(!validEmail) {
+            request.setAttribute("invalidEmail", true);
+            request.getRequestDispatcher("/WEB-INF/households/change-email.jsp").forward(request, response);
+        }
+        if(!validPassword) {
+            request.setAttribute("invalidPassword", true);
+            request.getRequestDispatcher("/WEB-INF/households/change-email.jsp").forward(request, response);
+        }
         if(validPassword && validEmail) {
             loggedInHousehold.setEmail(newEmail);
             try{
@@ -46,11 +64,7 @@ public class ChangeEmailServlet extends HttpServlet {
             } catch (SQLException e) {
                 throw new RuntimeException("Unable to update Email.", e);
             }
-        } else if (validPassword) {
-            request.setAttribute("emailNotAvailable", true);
-            request.getRequestDispatcher("/WEB-INF/households/change-email.jsp").forward(request, response);
-        }
-        else {
+        } else {
             response.sendRedirect("/profile/change-email");
         }
     }

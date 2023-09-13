@@ -4,7 +4,6 @@
     function validatePassword() {
         let oldPassword = document.getElementById('old-password').value;
         let newPassword = document.getElementById('new-password').value;
-
         switch (true) {
             case oldPassword === newPassword:
                 alert("Passwords cannot be the same!")
