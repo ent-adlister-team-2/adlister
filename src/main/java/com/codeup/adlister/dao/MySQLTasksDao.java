@@ -89,6 +89,17 @@ public class MySQLTasksDao implements Tasks {
             throw new RuntimeException("Error deleting a task.", e);
         }
     }
+    @Override
+    public void deleteAllTasks(long id) {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("DELETE FROM tasklister_db.tasks WHERE household_id = ?");
+            stmt.setLong(1, id);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error deleting all ads.", e);
+        }
+    }
 
     @Override
     public long updateName(long id, String name) {

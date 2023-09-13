@@ -16,6 +16,7 @@ public interface Tasks {
     // insert a new ad and return the new ad's id
     Long insert(Task task);
     void deleteTask(long id);
+    void deleteAllTasks(long id);
 
 
     long updateName(long id, String name);
