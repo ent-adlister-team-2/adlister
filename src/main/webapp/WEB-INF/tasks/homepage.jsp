@@ -39,18 +39,6 @@
                         <div class="para">Description: ${task.description} </div>
                         <div> Repeatable: ${task.repeatable} </div>
                         <div> Status: ${task.status} </div>
-                        <form action="/tasks/completed" method="get" id="completeTask" name="incomplete" >
-                            <button class="task-btn"   type="submit">
-                                <c:if test="${not empty complete}">
-                                    <span class="task-btn-text-one">Complete Task</span>
-                                    <span class="task-btn-text-two">Completed!</span>
-                                </c:if>
-                                <c:if test="${not empty complete}">
-                                    <span class="task-btn-text-one">Incomplete Task</span>
-                                    <span class="task-btn-text-two">Complete!</span>
-                                </c:if>
-                            </button>
-                        </form>
                         <button class="btn margin-top-1" type="submit">
                             <a href="${pageContext.request.contextPath}/tasks/view?id=${task.id}">View Task
                                 Details</a>
@@ -62,17 +50,6 @@
         </div>
     </div>
 </div>
-<script>
-    let completedTask = document.getElementById("completeTask");
-    completedTask.addEventListener("submit", () => {
-        console.log("button is clicked!");
-        if (document.getElementsByName("incomplete")) {
-            document.getElementById("completeTask").setAttribute("name", "complete");
-        }
-        if (document.getElementsByName("complete")) {
-            document.getElementById("completeTask").setAttribute("name", "incomplete");
-        }
-    })
-</script>
+
 </body>
 </html>

@@ -10,32 +10,24 @@
   <jsp:include page="../partials/navbar.jsp"/>
   <div class="container login-box">
     <h1 class="title">Edit Task</h1>
-    <form action="/tasks/view/edit?id=${task.id}" method="POST">
+    <form action="/tasks/view/edit?id=${task.id}" method="POST" id="edit-task-form">
       <div class="user-box">
         <label for="name"></label>
-        <input id="name" name="name" class="form-control" type="text" placeholder="Task Name">
+        <input id="name" name="name" class="form-control" type="text" placeholder="Task Name" value="${task.name}">
       </div>
       <div class="user-box">
         <label for="description"></label>
-        <input id="description" name="description" class="form-control" type="text" placeholder="Task Description">
+        <input id="description" name="description" class="form-control" type="text" placeholder="Task Description" value="${task.description}">
       </div>
-<%--      <div class="user-box">--%>
-<%--        <label for="category"></label>--%>
-<%--        <input id="category" name="category" class="form-control" type="text" placeholder="Task Category">--%>
-<%--      </div>--%>
-<%--      <div class="user-box">--%>
-<%--        <label for="completion-status"></label>--%>
-<%--        <input id="completion-status" name="completion-status" class="form-control" type="checkbox" placeholder="Is this Task Complete?">--%>
-<%--      </div>--%>
       <div class="repeat-check">
         <input id="repeatable" name="repeatable" class="form-control" type="checkbox">
         <label for="repeatable">Repeatable task?</label>
       </div>
-      <button type="submit" class="submit-btn">Save Changes <span></span></button>
+      <button type="submit" class="submit-btn" >Save Changes <span></span></button>
     </form>
   </div>
 
 </div>
-
+<script src="../../js/edit_task_validation.js"></script>
 </body>
 </html>
