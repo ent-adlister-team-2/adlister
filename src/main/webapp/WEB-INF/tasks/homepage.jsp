@@ -38,7 +38,6 @@
                         <h2 class="heading">Task: ${task.name} </h2>
                         <div class="para">Description: ${task.description} </div>
                         <div> Repeatable: ${task.repeatable} </div>
-                        <div> Status: ${task.status} </div>
                         <button class="btn margin-top-1" type="submit">
                             <a href="${pageContext.request.contextPath}/tasks/view?id=${task.id}">View Task
                                 Details</a>
