@@ -10,7 +10,7 @@
   <jsp:include page="../partials/navbar.jsp"/>
   <div class="container login-box">
     <h1 class="title">Edit Task</h1>
-    <form action="/tasks/view/edit?id=${task.id}" method="POST" id="edit-task-form">
+    <form action="/tasks/view/edit?id=${task.id}" method="POST" id="editTask">
       <div class="user-box">
         <label for="name"></label>
         <input id="name" name="name" class="form-control" type="text" placeholder="Task Name" value="${task.name}">

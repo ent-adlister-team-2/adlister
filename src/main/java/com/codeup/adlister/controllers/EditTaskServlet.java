@@ -33,7 +33,7 @@ public class EditTaskServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String name = request.getParameter("name");
         if(name.length() >= 100) {
-        response.sendRedirect("/tasks/view/edit");
+        request.getRequestDispatcher("/WEB-INF/tasks/edit.jsp");
         }
         String description = request.getParameter("description");
         Boolean repeatable = request.getParameter("repeatable") != null;
