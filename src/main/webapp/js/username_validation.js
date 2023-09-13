@@ -1,8 +1,8 @@
 "use strict";
 (function () {
     function validateUsername() {
-        let oldUsername = document.getElementById('old-username').value;
-        let newUsername = document.getElementById('new-username').value;
+        let oldUsername = document.getElementById('oldUsername').value;
+        let newUsername = document.getElementById('newUsername').value;
         switch (true) {
             case oldUsername === "":
                 console.log("username is blank")
@@ -35,7 +35,7 @@
         sessionStorage.setItem('oldUser', oldUsername.value);
         sessionStorage.setItem('newUser', newUsername.value);
     }
-    let form = document.getElementById('change-household-form')
+    let form = document.getElementById('changeUsernameForm')
     form.addEventListener('submit', function (e) {
         e.preventDefault();
         validateUsername();
@@ -43,8 +43,8 @@
         stickyForm();
         form.submit();
     });
-    let oldField = document.getElementById('old-username');
-    let newField = document.getElementById('new-username');
+    let oldField = document.getElementById('oldUsername');
+    let newField = document.getElementById('newUsername');
     oldField.value = sessionStorage.getItem('oldUser');
     newField.value = sessionStorage.getItem('newUser');
 })();

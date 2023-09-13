@@ -15,7 +15,7 @@
         let name = document.getElementById('name');
         sessionStorage.setItem('name', name.value);
     }
-    let form = document.getElementById('change-name-form')
+    let form = document.getElementById('changeNameForm')
     form.addEventListener('submit', function (e) {
         e.preventDefault();
         validatePassword();

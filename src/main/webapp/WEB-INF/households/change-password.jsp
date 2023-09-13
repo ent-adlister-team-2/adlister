@@ -14,14 +14,14 @@
     <c:if test="${not empty invalidPassword}">
     <h2 style="color: white">Password is incorrect!</h2>
     </c:if>
-    <form id="change-household-form" action="${pageContext.request.contextPath}/profile/change-password" method="POST">
+    <form id="changePasswordForm" action="${pageContext.request.contextPath}/profile/change-password" method="POST">
       <div class="user-box">
-        <label for="old-password"></label>
-        <input id="old-password" name="old-password" class="form-control" type="password" placeholder="Old Password">
+        <label for="oldPassword"></label>
+        <input id="oldPassword" name="old-password" class="form-control" type="password" placeholder="Old Password">
       </div>
       <div class="user-box">
-        <label for="new-password"></label>
-        <input id="new-password" name="new-password" class="form-control" type="password" placeholder=" New Password">
+        <label for="newPassword"></label>
+        <input id="newPassword" name="new-password" class="form-control" type="password" placeholder=" New Password">
       </div>
       <div class="column">
         <button type="submit">

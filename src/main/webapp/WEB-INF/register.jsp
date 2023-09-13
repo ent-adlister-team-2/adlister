@@ -32,8 +32,8 @@
             <input required id="password" name="password" class="form-control" type="password" placeholder="Enter in a Password">
         </div>
         <div class="user-box">
-            <label for="confirm_password"></label>
-            <input required id="confirm_password" name="confirm_password" class="form-control" type="password"
+            <label for="confirmPassword"></label>
+            <input required id="confirmPassword" name="confirm_password" class="form-control" type="password"
                    placeholder=" Confirm Password">
         </div>
         <div class="column">

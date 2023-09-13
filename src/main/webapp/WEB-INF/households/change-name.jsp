@@ -14,7 +14,7 @@
         <c:if test="${not empty wrongPassword}">
             <h2 style="color: white">Your password was incorrect!</h2>
         </c:if>
-        <form id="change-name-form" action="${pageContext.request.contextPath}/profile/change-name" method="POST">
+        <form id="changeNameForm" action="${pageContext.request.contextPath}/profile/change-name" method="POST">
             <div class="user-box">
                 <label for="name"></label>
                 <input id="name" name="name" class="form-control" type="text" placeholder="New Household Name">

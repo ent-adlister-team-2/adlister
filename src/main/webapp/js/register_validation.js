@@ -4,21 +4,21 @@
       let username = document.getElementById('username').value;
       let email = document.getElementById('email').value;
       let password = document.getElementById('password').value;
-      let confirmPassword = document.getElementById('confirm-password');
+      let confirmPassword = document.getElementById('confirmPassword').value;
       switch (true) {
-          case username.length <= 4:
+          case username.length < 4:
               alert("Username must be more than four characters!")
               return false;
-          case username.length >= 20:
+          case username.length > 20:
               alert("Username cannot be more than twenty characters!")
               return false;
-          case email.length <= 4:
+          case email.length < 4:
               alert("Email cannot be empty!")
               return false;
-          case password.length <= 4:
+          case password.length < 4:
               alert("Password must be more than four characters!")
               return false;
-          case password.length >=20:
+          case password.length >20:
               alert("Password cannot be more than twenty characters!")
               return false;
           case password !== confirmPassword:
@@ -37,12 +37,13 @@
     let form = document.getElementById('register-form');
     form.addEventListener('submit', function (e) {
         e.preventDefault();
-        validate();
-        if(!validate()) {
+        if(validate() === true) {
+            stickyForm();
+            form.submit();
+        }
+        if(validate() === false) {
             e.preventDefault();
         }
-        stickyForm();
-        form.submit();
     });
     let userField = document.getElementById('username');
     userField.value = sessionStorage.getItem('username');
