@@ -12,9 +12,9 @@
 
     <form method="POST" action="${pageContext.request.contextPath}/tasks/view/delete?id=${task.id}">
         <div class="user-box">
-            <h1 class="title">Task: ${task.getName()}</h1>
+            <h1 class="title">Confirm delete?</h1>
+            <h2 class="title">Task: ${task.getName()}</h2>
             <p class="homepage-text">Description: ${task.getDescription()}</p>
-            <p class="homepage-text">Repeatable: ${task.getRepeatable()}</p>
         </div>
         <div class="column">
             <button type="submit" class="title">
