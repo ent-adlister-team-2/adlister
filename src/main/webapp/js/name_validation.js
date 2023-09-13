@@ -1,5 +1,4 @@
 "use strict";
-
 (function () {
     function validatePassword() {
         let password = document.getElementById('password').value;

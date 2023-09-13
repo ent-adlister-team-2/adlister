@@ -1,5 +1,5 @@
+"use strict";
 (function () {
-    "use strict"
     function validate() {
       let username = document.getElementById('username').value;
       let email = document.getElementById('email').value;
@@ -22,4 +22,23 @@
               return false;
       }
     }
-});
+    function stickyForm() {
+        let username = document.getElementById('username');
+        let email = document.getElementById('email');
+        sessionStorage.setItem('username', username.value);
+        sessionStorage.setItem('email', email.value);
+        username.value = sessionStorage.getItem('username');
+        email.value = sessionStorage.getItem('email');
+    }
+    let form = document.getElementById('register-form');
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        validate();
+        stickyForm();
+        form.submit();
+    });
+    let userField = document.getElementById('username');
+    userField.value = sessionStorage.getItem('username');
+    let emailField = document.getElementById('email');
+    emailField.value = sessionStorage.getItem('email');
+})();

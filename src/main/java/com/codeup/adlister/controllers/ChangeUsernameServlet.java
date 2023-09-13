@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 @WebServlet("/profile/change-username")
 public class ChangeUsernameServlet extends HttpServlet {
@@ -24,7 +25,7 @@ public class ChangeUsernameServlet extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/households/change-username.jsp").forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         Household loggedInHousehold = (Household) request.getSession().getAttribute("household");
 
         String oldUsername = request.getParameter("old-username");
@@ -33,6 +34,16 @@ public class ChangeUsernameServlet extends HttpServlet {
 
         Boolean validUsername = loggedInHousehold.getUsername().equals(oldUsername);
         Boolean validPassword = BCrypt.checkpw(password, loggedInHousehold.getPassword());
+
+        List<Household> households = DaoFactory.getHouseholdsDao().all();
+
+        for(Household household : households) {
+            if (newUsername.equals(household.getUsername())) {
+                request.setAttribute("usernameNotAvailable", true);
+                request.getRequestDispatcher("/WEB-INF/households/change-username.jsp").forward(request, response);
+                return;
+            }
+        }
 
         if(validUsername && validPassword) {
             loggedInHousehold.setUsername(newUsername);
