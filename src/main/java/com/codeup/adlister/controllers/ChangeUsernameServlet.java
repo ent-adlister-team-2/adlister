@@ -24,14 +24,11 @@ public class ChangeUsernameServlet extends HttpServlet {
         request.setAttribute("household", household);
         request.getRequestDispatcher("/WEB-INF/households/change-username.jsp").forward(request, response);
     }
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         Household loggedInHousehold = (Household) request.getSession().getAttribute("household");
-
         String oldUsername = request.getParameter("old-username");
         String newUsername = request.getParameter("new-username");
         String password = request.getParameter("password");
-
         Boolean validUsername = loggedInHousehold.getUsername().equals(oldUsername);
         Boolean validPassword = BCrypt.checkpw(password, loggedInHousehold.getPassword());
 
@@ -44,7 +41,14 @@ public class ChangeUsernameServlet extends HttpServlet {
                 return;
             }
         }
-
+        if(!validUsername) {
+            request.setAttribute("invalidUsername", true);
+            request.getRequestDispatcher("/WEB-INF/households/change-username.jsp").forward(request, response);
+        }
+        if(!validPassword) {
+            request.setAttribute("invalidPassword", true);
+            request.getRequestDispatcher("/WEB-INF/households/change-username.jsp").forward(request, response);
+        }
         if(validUsername && validPassword) {
             loggedInHousehold.setUsername(newUsername);
             try {
