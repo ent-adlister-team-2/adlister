@@ -31,7 +31,7 @@
         <input id="repeatable" name="repeatable" class="form-control" type="checkbox">
         <label for="repeatable">Repeatable task?</label>
       </div>
-      <button type="submit" class="submit-btn">Save Changes</button>
+      <button type="submit" class="submit-btn">Save Changes <span></span></button>
     </form>
   </div>
 
