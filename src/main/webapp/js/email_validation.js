@@ -41,10 +41,8 @@
     let form = document.getElementById('changeEmailForm')
     form.addEventListener('submit', function (e) {
         e.preventDefault();
-        validatePassword();
-        validateEmail();
-        stickyForm();
-        form.submit();
+            stickyForm();
+            form.submit();
     });
     let oldField = document.getElementById('oldEmail');
     let newField = document.getElementById('newEmail');
