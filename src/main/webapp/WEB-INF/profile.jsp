@@ -29,7 +29,7 @@
             <div class="user-box">
 <%--                <h2 class="title">Household Name: ${household.name}</h2>--%>
                 <a href="${pageContext.request.contextPath}/profile/change-name">
-                    <button>Change Name</button>
+                    <button>Rename Household</button>
                     <span></span>
                 </a>
             </div>
