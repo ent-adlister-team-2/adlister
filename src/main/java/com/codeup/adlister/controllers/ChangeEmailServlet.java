@@ -42,11 +42,7 @@ public class ChangeEmailServlet extends HttpServlet {
         List<Household> households = DaoFactory.getHouseholdsDao().all();
 
         for(Household household : households) {
-            System.out.println(household.getEmail());
-            System.out.println(newEmail);
-            System.out.println("------");
            if (newEmail.equals(household.getEmail())) {
-               System.out.println("email is the same");
                request.setAttribute("emailNotAvailable", true);
                request.getRequestDispatcher("/WEB-INF/households/change-email.jsp").forward(request, response);
                return;

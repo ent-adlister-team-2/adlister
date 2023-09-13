@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "controllers.RegisterServlet", urlPatterns = "/register")
 public class RegisterServlet extends HttpServlet {
@@ -17,7 +18,7 @@ public class RegisterServlet extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String username = request.getParameter("username");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
@@ -42,6 +43,21 @@ public class RegisterServlet extends HttpServlet {
         String hash = Password.hash(household.getPassword());
 
         household.setPassword(hash);
+
+        List<Household> households = DaoFactory.getHouseholdsDao().all();
+
+        for(Household householdList : households) {
+            if (username.equals(householdList.getUsername())) {
+                request.setAttribute("usernameNotAvailable", true);
+                request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
+                return;
+            }
+            if (email.equals(householdList.getEmail())) {
+                request.setAttribute("emailNotAvailable", true);
+                request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
+                return;
+            }
+        }
 
         DaoFactory.getHouseholdsDao().insert(household);
         response.sendRedirect("/login");
