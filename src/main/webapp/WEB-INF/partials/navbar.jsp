@@ -6,7 +6,7 @@
 
     <div class="row">
         <div class="mr-1">
-            <img class="task-list-image" src="/images/task-list-image.jpeg" alt="image">
+            <a href="/index"><img class="task-list-image" src="/images/task-list-image.jpeg" alt="image"></a>
         </div>
         <c:choose>
             <c:when test="${sessionScope.household != null}">
